@@ -28,26 +28,21 @@
         <li><a href="boat.html">The Boat</a></li>
         <li><a href="races.html" class="active">The Races</a></li>
         <li><a href="sponsors.html">Sponsors</a></li>
-        <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About Me</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<!-- =================================================== INTRO -->
-<section class="article-hero" style="padding-bottom: 0;">
-  <div class="wrap-narrow">
-    <span class="eyebrow">The 2026 Season</span>
-    <h1>Three races, <span class="italic" style="color:var(--blue);">one long road north.</span></h1>
-    <p style="font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: 1.25rem; max-width: 60ch; margin: 24px auto 0;">Nine hundred nautical miles of east-coast offshore racing in six weeks. Two races, one long road north.</p>
-  </div>
-</section>
-
-<!-- =================================================== HERO IMAGE -->
-<section style="padding: 50px 0 0;">
+<!-- =================================================== HERO IMAGE WITH OVERLAY -->
+<section style="padding: 0;">
   <div class="wrap">
-    <div style="aspect-ratio: 21/9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line);">
+    <div style="position: relative; aspect-ratio: 21/9; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--line); margin-top: 30px;">
       <img src="images-videos/DJI_20260425132727_0306_D.JPG" alt="Alliance from above" style="width:100%;height:100%;object-fit:cover;" />
+      <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,15,40,0.55) 0%, rgba(10,15,40,0.35) 50%, rgba(10,15,40,0.7) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px;">
+        <span class="eyebrow" style="color: rgba(250,246,238,0.85); text-shadow: 0 1px 2px rgba(0,0,0,0.4);">The 2026 Season</span>
+        <h1 class="races-hero-title" style="color: var(--cream); margin-top: 12px; font-size: clamp(2rem, 5vw, 3.6rem); text-shadow: 0 2px 14px rgba(0,0,0,0.55);">Two races, <span class="italic races-hero-italic">a big journey ahead.</span></h1>
+      </div>
     </div>
   </div>
 </section>
@@ -61,7 +56,7 @@
         <h2 class="mt-sm">Sydney to Gold Coast</h2>
         <div style="display:flex; gap:12px; flex-wrap:wrap; margin: 18px 0 22px;">
           <span class="dist" style="background:var(--chartreuse); color:var(--purple); padding:6px 14px; border-radius:999px; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">384 nm</span>
-          <span class="dist" style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:6px 14px; border-radius:999px; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~48–60 hours</span>
+          <span class="dist" style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:6px 14px; border-radius:999px; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~2–3 days</span>
           <span class="dist" style="background:transparent; color:var(--ink-soft); border:1px solid var(--line); padding:6px 14px; border-radius:999px; font-size:0.78rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Double-handed</span>
         </div>
         <p>From Sydney Harbour up the NSW coast and into Queensland. The race tracks roughly parallel to land but you can play the East Australian Current — three knots of southerly flow you have to either fight or hide from — and the trade-wind influence further north. It's the first real offshore of the season and the first time Alliance gets pushed for more than 24 hours.</p>
@@ -89,8 +84,8 @@
 
           <!-- end point: Gold Coast -->
           <circle cx="130" cy="130" r="6" fill="#e6f253"/>
-          <text x="145" y="135" font-family="Inter, sans-serif" font-size="11" fill="#faf6ee" font-weight="600">Gold Coast</text>
-          <text x="145" y="148" font-family="Inter, sans-serif" font-size="9" fill="#faf6ee" opacity="0.7" letter-spacing="0.1em">FINISH</text>
+          <text x="145" y="120" font-family="Inter, sans-serif" font-size="11" fill="#faf6ee" font-weight="600">Gold Coast</text>
+          <text x="145" y="134" font-family="Inter, sans-serif" font-size="9" fill="#faf6ee" opacity="0.7" letter-spacing="0.1em">FINISH</text>
 
           <!-- route line, slightly offshore -->
           <path d="M150 340 Q200 280 200 230 Q210 180 180 130 L130 130" stroke="#e6f253" stroke-width="2.5" fill="none" stroke-dasharray="6 4"/>
@@ -100,10 +95,10 @@
             <path d="M260 200 Q260 260 260 310"/>
             <path d="M254 302 L260 312 L266 302"/>
           </g>
-          <text x="270" y="260" font-family="Caveat, cursive" font-size="18" fill="#4384b4">EAC ↓</text>
+          <text x="270" y="260" font-family="Inter, sans-serif" font-size="18" fill="#4384b4" font-weight="700" letter-spacing="0.12em">EAC ↓</text>
 
           <!-- wind label -->
-          <text x="230" y="80" font-family="Caveat, cursive" font-size="18" fill="#e6f253">SE trades →</text>
+          <text x="230" y="80" font-family="Inter, sans-serif" font-size="18" fill="#e6f253" font-weight="700" letter-spacing="0.12em">SE TRADES →</text>
         </svg>
       </div>
     </div>
@@ -150,13 +145,13 @@
 
           <!-- Fraser Island mark -->
           <circle cx="155" cy="240" r="3" fill="#faf6ee" opacity="0.6"/>
-          <text x="165" y="244" font-family="Caveat, cursive" font-size="14" fill="#faf6ee" opacity="0.7">Fraser Is.</text>
+          <text x="165" y="244" font-family="Inter, sans-serif" font-size="14" fill="#faf6ee" opacity="0.7">Fraser Is.</text>
 
           <!-- route -->
           <path d="M130 320 Q200 260 200 200 Q190 140 150 100 L110 100" stroke="#e6f253" stroke-width="2.5" fill="none" stroke-dasharray="6 4"/>
 
           <!-- trade wind label -->
-          <text x="240" y="160" font-family="Caveat, cursive" font-size="18" fill="#e6f253">SE trades</text>
+          <text x="240" y="160" font-family="Inter, sans-serif" font-size="18" fill="#e6f253" font-weight="700" letter-spacing="0.12em">SE TRADES</text>
           <g stroke="#e6f253" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7">
             <path d="M250 180 Q220 200 200 220"/>
             <path d="M204 215 L200 222 L208 222"/>
@@ -196,7 +191,7 @@
     <div class="footer-grid">
       <div>
         <h3>Annie Stevenson</h3>
-        <p>Double-handed offshore racing campaign. Currently learning out loud.</p>
+        <p>A double-handed offshore campaign, in public.</p>
         <p style="margin-top: 16px;"><a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">@_annie_sails on Instagram &rarr;</a></p>
       </div>
       <div>
@@ -206,22 +201,20 @@
           <li><a href="boat.html">The Boat</a></li>
           <li><a href="races.html">The Races</a></li>
           <li><a href="sponsors.html">Sponsors</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="about.html">About Me</a></li>
         </ul>
       </div>
       <div>
         <h4>Follow</h4>
         <ul>
           <li><a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="#">YouTube</a></li>
           <li><a href="#">Newsletter</a></li>
           <li><a href="mailto:hello@anniestevenson.au">Email</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Annie Stevenson · Middle Harbour Yacht Club</span>
-      <span>Built with cream paper, salt water, and a lot of caffeine.</span>
+      <span>© 2026 Annie Stevenson </span>
     </div>
   </div>
 </footer>
