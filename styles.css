@@ -1,5 +1,5 @@
 /* =========================================================
-   Annie Stevenson — Sailing Campaign
+   Annie Stevenson - Sailing Campaign
    Shared stylesheet
    ========================================================= */
 
@@ -49,7 +49,7 @@ html { scroll-behavior: smooth; }
   color: var(--purple);
 }
 
-/* Magazine-style chartreuse rule before key headings — used opt-in via .h2-rule */
+/* Magazine-style chartreuse rule before key headings - used opt-in via .h2-rule */
 .h2-rule {
   position: relative;
   padding-left: 18px;
@@ -414,31 +414,38 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 /* ---------- Reels + title card grid (home page library) ---------- */
 .reels-with-title {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  position: relative;
 }
-@media (max-width: 900px) {
-  .reels-with-title { grid-template-columns: repeat(2, 1fr); }
+.reels-with-title .reel {
+  aspect-ratio: 9/13;
 }
-@media (max-width: 560px) {
-  .reels-with-title { grid-template-columns: 1fr; }
-}
-
 .reel-title-card {
-  aspect-ratio: 9/16;
+  grid-column: 2 / 4;
   border-radius: var(--radius-lg);
-  background: var(--purple);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 36px 28px;
+  background: linear-gradient(160deg, var(--purple) 0%, #3a1a5e 40%, var(--blue) 100%);
+  border: 2px solid var(--chartreuse);
+  padding: 36px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 24px 60px rgba(40, 4, 65, 0.35), 0 0 0 4px rgba(230, 242, 83, 0.15);
+  z-index: 2;
+  position: relative;
+  min-height: 220px;
 }
-@media (max-width: 560px) {
-  .reel-title-card {
-    aspect-ratio: auto;
-    padding: 48px 28px;
-  }
+@media (max-width: 900px) {
+  .reels-with-title { grid-template-columns: repeat(3, 1fr); }
+  .reel-title-card { grid-column: 1 / 3; }
+}
+@media (max-width: 640px) {
+  .reels-with-title { grid-template-columns: repeat(2, 1fr); }
+  .reel-title-card { grid-column: 1 / -1; }
+}
+@media (max-width: 420px) {
+  .reels-with-title { grid-template-columns: 1fr; }
+  .reel-title-card { grid-column: 1; }
 }
 
 /* ---------- "Write-up coming" badge on reel cards ---------- */
@@ -467,6 +474,9 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
+.tape-static {
+  padding: 10px 0;
+}
 .tape-inner {
   display: flex;
   gap: 40px;
@@ -475,6 +485,11 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   font-style: italic;
   font-size: 1.4rem;
   animation: scroll 35s linear infinite;
+}
+.tape-static .tape-inner {
+  animation: none;
+  justify-content: center;
+  white-space: normal;
 }
 .tape-inner span { display: inline-flex; align-items: center; gap: 40px; }
 .tape-inner .dot { color: var(--chartreuse); }
@@ -628,8 +643,8 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 
 /* ---------- Featured logos strip ---------- */
 .logos {
-  background: var(--cream-deep);
-  padding: 32px 0;
+  background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%);
+  padding: 14px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -639,39 +654,81 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   padding: 0 var(--gutter);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
+  gap: 20px;
   flex-wrap: wrap;
 }
 .logos-label {
   font-family: var(--sans);
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  color: rgba(250, 246, 238, 0.6);
 }
 .logos-list {
   display: flex;
-  gap: clamp(20px, 4vw, 50px);
+  gap: clamp(16px, 3vw, 36px);
   align-items: center;
   flex-wrap: wrap;
 }
 .logos-list span {
   font-family: var(--serif);
-  font-size: 1.15rem;
-  color: var(--purple);
+  font-size: 0.95rem;
+  color: var(--cream);
   letter-spacing: 0.02em;
   opacity: 0.85;
 }
+.logos-list .logo-img {
+  height: 22px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.2s ease;
+}
+.logos-list .logo-img.logo-hero { height: 44px; }
+.logos-list .logo-img:hover { opacity: 1; }
+.logo-placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 14px;
+  border: 1px dashed rgba(250, 246, 238, 0.5);
+  border-radius: 4px;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 246, 238, 0.6);
+}
 .logos-link {
   font-family: var(--sans);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   letter-spacing: 0.06em;
-  color: var(--ink-soft);
+  color: var(--chartreuse);
   border: none;
   white-space: nowrap;
 }
-.logos-link:hover { color: var(--purple); }
+.logos-link:hover { color: var(--cream); }
+
+/* ---------- In development sticker ---------- */
+.dev-sticker {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--chartreuse);
+  color: var(--purple);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(40, 4, 65, 0.25);
+  z-index: 100;
+  pointer-events: none;
+}
 
 /* ---------- Two-column feature block ---------- */
 .feature {
@@ -847,7 +904,7 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .specs {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-auto-rows: minmax(120px, auto);
+  grid-auto-rows: minmax(80px, auto);
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);
@@ -866,18 +923,18 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .spec {
   background: var(--cream);
-  padding: 22px 24px;
+  padding: 16px 18px;
 }
 .spec-label {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .spec-value {
   font-family: var(--serif);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--purple);
 }
 
@@ -1018,7 +1075,7 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 
 .newsletter-blue {
-  background: var(--blue);
+  background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%);
   padding: 50px 0;
   text-align: center;
 }
@@ -1044,6 +1101,90 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   color: var(--purple);
 }
 .newsletter input:focus { outline: 2px solid var(--purple); outline-offset: 1px; }
+
+/* ---------- Mission statement (home) ---------- */
+.mission-home {
+  background: var(--purple);
+  color: var(--cream);
+  padding: clamp(48px, 7vw, 80px) 0;
+  text-align: center;
+  border-top: 1px solid var(--line);
+}
+.mission-home h2 {
+  color: var(--chartreuse);
+  margin-bottom: 20px;
+}
+.mission-home p {
+  color: rgba(250, 246, 238, 0.85);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---------- Race dates strip (home) ---------- */
+.race-dates-strip {
+  background: var(--cream-deep);
+  padding: clamp(36px, 5vw, 56px) 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.race-dates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+@media (max-width: 640px) {
+  .race-dates-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Boat feature inline ---------- */
+.boat-specs-feature {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(30px, 5vw, 60px);
+  align-items: start;
+}
+.boat-specs-feature .specs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 860px) {
+  .boat-specs-feature { grid-template-columns: 1fr; }
+  .boat-specs-feature .specs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .boat-specs-feature .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- Accessibility ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 999;
+  padding: 12px 20px;
+  background: var(--chartreuse);
+  color: var(--purple);
+  font-weight: 700;
+  border-radius: 0 0 var(--radius) var(--radius);
+  font-size: 0.88rem;
+  border: none;
+}
+.skip-link:focus {
+  top: 0;
+}
 
 /* ---------- Utility ---------- */
 .text-center { text-align: center; }
