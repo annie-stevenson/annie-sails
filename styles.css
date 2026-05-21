@@ -411,6 +411,36 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .editorial-banner:hover img { transform: scale(1.04); }
 
+/* ---------- Reels + title card grid (home page library) ---------- */
+.reels-with-title {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 900px) {
+  .reels-with-title { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .reels-with-title { grid-template-columns: 1fr; }
+}
+
+.reel-title-card {
+  aspect-ratio: 9/16;
+  border-radius: var(--radius-lg);
+  background: var(--purple);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (max-width: 560px) {
+  .reel-title-card {
+    aspect-ratio: auto;
+    padding: 48px 28px;
+  }
+}
+
 /* ---------- "Write-up coming" badge on reel cards ---------- */
 .reel-soon {
   position: absolute;
