@@ -50,8 +50,8 @@
       <div>
         <span class="eyebrow">The day job</span>
         <h2 class="mt-sm">Platform engineering, mostly.</h2>
-        <p class="mt-md">I'm Lead Platform Engineer at Mantel - an Australian engineering consultancy where I run a team that builds and operates cloud infrastructure for other engineering teams. The actual work is the kind of thing that's hard to describe at parties: distributed systems, observability, internal developer platforms. The short version is that I make it easier for other people to ship software safely.</p>
-        <p>I'm 27. I learned to code at university and never quite shook the habit. I like systems thinking, calm in chaos, and the part of engineering that involves writing down what you'll do <em>before</em> you do it.</p>
+        <p class="mt-md">I'm Lead Platform Engineer at Mantel. The actual work is the kind of thing that's hard to describe at parties: infrastructure as code, pipelines, shift left, networking. But in short, I'm responsibile for designing and building the infrastructure other engineers work on.</p>
+        <p>I'm 27. I learnt to code at university and never quite shook the habit. I like understanding the reasons behind decisions, seeing things through end-to-end, being calm in chaos, and the part of engineering that involves understanding the problem <em>before</em> trying to solve it.</p>
       </div>
       <div class="feature-visual" style="border:none; background:transparent;">
         <img src="images-videos/Annie%20headshot%202.webp" alt="Annie Stevenson" style="width:100%; height:100%; object-fit:cover; object-position: center 20%; border-radius: var(--radius-lg);" />
@@ -67,9 +67,9 @@
       <div>
         <span class="eyebrow">The other thing</span>
         <h2 class="mt-sm">How I ended up offshore.</h2>
-        <p class="mt-md">I first started sailing when i was at school, but reservoir sailing in yorkshire quickly becomes rather bleak and cold quite quickly. I got onto bigger boats through cruising and when i moved over to Australia, i thought it was a great opportunity to make the most of both. I found the more i sailed, the more i found like minded people and a lovely community of people who made me want to invest in the sport.</p>
-        <p>I started inshore. Then ocean races as crew. Then more responsibility. And eventually the realisation that what I actually wanted was a smaller boat, fewer people, more decisions of my own.</p>
-        <p>That's what double-handed offshore is. Two people. One boat. Everything else is on you. This season i'm racing with Peter Winter, who i've raced with since 2023 - he's better at sail repairs, tactics but somehow always manages to need to be at the nav station when it starts to rain.</p>
+        <p class="mt-md">I first started sailing at school, but reservoir sailing in Yorkshire gets bleak and cold pretty quickly. I got onto bigger boats through cruising, and committed to the racing scene when I moved to Australia five years ago.</p>
+        <p>I started inshore. Then ocean races as crew. Then more responsibility. And eventually the realisation that what I actually wanted was to make decisions on my own.</p>
+        <p>That's what led me to double-handed. Two people. One boat. Everything is on you. This season I'm racing with Peter Winter, who I've raced with since 2023 - he's a better sailor than me, better at sail repairs and tactics, but somehow always needs to be at the nav station when it starts to rain.</p>
       </div>
       <div class="feature-visual" style="border:none; background:transparent;">
         <img src="images-videos/Alliance-Photo-4.JPG" alt="Offshore racing" style="width:100%; height:100%; object-fit:cover; border-radius: var(--radius-lg);" />
@@ -96,16 +96,17 @@
   </div>
 </section>
 
-<!-- =================================================== MISSION -->
-<section style="background: var(--purple); color: var(--cream); border-top: 1px solid var(--line);">
+<!-- =================================================== NEWSLETTER -->
+<section class="newsletter-blue" id="newsletter">
   <div class="wrap-narrow">
-    <span class="eyebrow" style="color: rgba(250,246,238,0.6);">The mission</span>
-    <h2 class="mt-sm" style="color: var(--chartreuse);">Why a campaign, why now.</h2>
-    <p class="mt-md" style="color: rgba(250,246,238,0.85); font-size: 1.1rem; line-height: 1.7;">There are two worlds I move in - technical leadership and elite offshore sport - and in both of them, the people doing the work still don't look quite like everyone they're working with. The campaign is partly about the racing. It's partly about going to start lines and meeting rooms where you weren't necessarily expected, and behaving as though you were.</p>
-    <p style="color: rgba(250,246,238,0.85); font-size: 1.1rem; line-height: 1.7;">Sailing is a wonderful, demanding sport that benefits from more people of more kinds doing it well. So is engineering. Accessible education is how you build a sport - it lowers the barrier, introduces new people, and makes sure talent isn't gated by who you know or where you grew up. The campaign is my small contribution to that - and the website is the educational version, so the next person can have a slightly easier time finding the door.</p>
-    <div class="mt-md">
-      <a href="index.html" class="btn accent">Start with the learning library <span class="arrow">&rarr;</span></a>
-    </div>
+    <span class="eyebrow" style="color: rgba(250,246,238,0.6);">Follow the campaign</span>
+    <h2 class="mt-sm" style="color: var(--cream);">Keep up to date.</h2>
+    <p style="color: rgba(250,246,238,0.85);">Get the latest clips, tips, race stories, and campaign updates delivered straight to your inbox.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Thanks ✓';">
+      <label for="newsletter-email" class="sr-only">Email address</label>
+      <input id="newsletter-email" type="email" placeholder="your@email.com" required aria-label="Email address" style="background: rgba(250,246,238,0.15); border-color: rgba(250,246,238,0.3); color: var(--cream);" />
+      <button type="submit" class="btn" style="background: var(--cream); color: var(--blue); border-color: var(--cream);">Subscribe</button>
+    </form>
   </div>
 </section>
 
