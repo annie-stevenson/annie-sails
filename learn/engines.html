@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The workings of an engine - Annie Stevenson</title>
+<meta name="description" content="How marine diesel engines work on sailing boats - the four-stroke cycle, cooling systems, fuel systems, and what to check before racing offshore." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+<!-- =================================================== NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="brand">
+      <svg class="brand-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M20 4 L20 30 L8 30 Z" fill="#280441"/>
+        <path d="M22 8 L34 30 L22 30 Z" fill="#4384b4"/>
+        <path d="M4 33 Q12 36 20 33 T36 33 L36 36 L4 36 Z" fill="#e6f253"/>
+      </svg>
+      Annie Stevenson
+    </a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html" class="active">Learn</a></li>
+        <li><a href="../boat.html">The Boat</a></li>
+        <li><a href="../races.html">The Races</a></li>
+        <li><a href="../sponsors.html">The Sponsors</a></li>
+        <li><a href="../about.html">About Me</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- =================================================== ARTICLE HERO -->
+<section class="article-hero">
+  <div class="wrap-narrow">
+    <span class="eyebrow">Mechanics · Long read</span>
+    <h1>The workings of an engine</h1>
+    <p style="font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: 1.25rem; max-width: 60ch; margin: 0 auto 30px;">Your engine is your backup plan, your battery charger, and your ticket in and out of the marina. Probably worth understanding how it works.</p>
+    <div class="article-meta">
+      <span>📅 Published May 2026</span>
+      <span>⏱ 7 min read</span>
+      <span>🏷️ Mechanics</span>
+    </div>
+  </div>
+</section>
+
+<!-- =================================================== REEL EMBED -->
+<div class="wrap-narrow">
+  <a href="https://www.instagram.com/p/DXd7EH3iRhk/" target="_blank" rel="noopener" style="display: block; border:none; text-decoration:none;">
+    <div class="reel-embed" style="cursor:pointer;">
+      <img src="../images-videos/covers/Engines.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;"/>
+      <div class="play" style="position:relative;z-index:3;"></div>
+      <div class="caption" style="z-index:3;">Tap to watch on @_annie_sails →</div>
+    </div>
+  </a>
+</div>
+
+<!-- =================================================== ARTICLE BODY -->
+<article class="article-body">
+
+  <p>I know what you're thinking. An article about engines on a sailing website? Isn't the whole point that you <em>don't</em> use an engine? And yes, in theory, you're right. In practice, your engine is the thing that gets you out of the marina, charges your batteries so the instruments work, and - on the really bad days - gets you home when everything else has gone sideways.</p>
+
+  <p>I am not a mechanic. I want to be very clear about that. But after enough time spent lying in a bilge with diesel on my face, I've picked up a working understanding of what's happening under the cockpit floor. And honestly, you don't need to be a mechanic. You just need to know enough to keep it running, spot when something's wrong, and not make things worse while you figure it out.</p>
+
+  <h2>1. Why sailors need to understand their engine</h2>
+
+  <p>Here's the uncomfortable truth: your engine is the most critical piece of safety equipment on the boat. Not the liferaft, not the EPIRB - the engine. Because the engine is what you use to avoid needing those other things.</p>
+
+  <p>Think about what your engine actually does. It motors you in and out of tight marinas where sail manoeuvres would be reckless. It charges the batteries that power your VHF, your navigation lights, your chartplotter. It gets you off a lee shore when the wind dies at the worst possible moment. And on a double-handed offshore race, when you're exhausted and the weather window is closing, it's what gets you into port safely.</p>
+
+  <div class="pull">Your engine is the most critical piece of safety equipment on the boat. It's the thing you use to avoid needing the liferaft.</div>
+
+  <p>The boats that get into trouble offshore aren't usually the ones with broken masts. They're the ones with engines that won't start when it matters. So let's talk about how the thing actually works.</p>
+
+  <h2>2. The four-stroke diesel cycle (simplified)</h2>
+
+  <p>Most sailing boats run marine diesel engines. Ours on Alliance is a small Volvo Penta - nothing exotic, just a reliable workhorse that lives under the cockpit sole and asks for very little in return.</p>
+
+  <p>The diesel engine runs on a four-stroke cycle, and despite what the engineering textbooks want you to believe, it's not that complicated. Four strokes, four things happen:</p>
+
+  <p><strong>Intake:</strong> the piston moves down, drawing air into the cylinder. Just air - no fuel yet. This is the big difference from a petrol engine, which sucks in a fuel-air mixture.</p>
+
+  <p><strong>Compression:</strong> the piston moves back up and compresses that air to roughly 20:1. This is aggressive compression. The air gets so hot from being squeezed - around 500°C - that it will ignite diesel fuel on contact. No spark plug needed.</p>
+
+  <p><strong>Power:</strong> at the top of the compression stroke, diesel fuel is injected directly into the cylinder. It hits the superheated air and ignites immediately. The expanding gases shove the piston back down. This is the stroke that actually produces power.</p>
+
+  <p><strong>Exhaust:</strong> the piston comes back up one last time, pushing the burnt gases out through the exhaust valve and out of the boat (mixed with cooling water, which is why your exhaust burbles).</p>
+
+  <p>That's it. Suck, squeeze, bang, blow - as every engineering student has been saying since approximately 1876. The whole thing repeats thousands of times per minute, turning a crankshaft, which turns your propeller shaft, which turns the propeller. Mechanical elegance, really.</p>
+
+  <h2>3. The cooling system</h2>
+
+  <p>This is where marine engines diverge from car engines, and it's where most people's understanding gets hazy. Your car engine is cooled by air flowing over a radiator. Your boat engine is cooled by the ocean. But not directly - because pumping corrosive salt water through your engine block would destroy it in a season.</p>
+
+  <p>Instead, most marine diesels use a <strong>two-circuit cooling system</strong>:</p>
+
+  <p><strong>The freshwater circuit</strong> is a closed loop of coolant (basically the same antifreeze you'd put in a car) that circulates through the engine block, absorbing heat. This coolant never leaves the system - it just goes round and round.</p>
+
+  <p><strong>The raw water circuit</strong> sucks in seawater through a through-hull fitting, pumps it through a <strong>heat exchanger</strong> (a bundle of small tubes where the hot freshwater coolant transfers its heat to the cold seawater), and then pushes the now-warm seawater out through the exhaust.</p>
+
+  <div class="pull">The heat exchanger is the reason your engine doesn't corrode from the inside out. The salt water never touches the engine block.</div>
+
+  <p>The heat exchanger is the clever bit. It lets the seawater cool the engine without the seawater ever touching the engine internals. The raw water side will eventually corrode and need servicing - that's the sacrificial part of the system. The engine block stays clean.</p>
+
+  <p>The component that makes the raw water circuit work is the <strong>impeller</strong> - a little rubber paddle wheel inside the raw water pump. It's also the component most likely to fail, because rubber doesn't love being spun at high speed in salt water. More on that shortly.</p>
+
+  <h2>4. The fuel system</h2>
+
+  <p>Diesel fuel systems are beautifully simple in concept and infuriatingly fiddly when they go wrong. The basic path is: fuel tank → primary filter (with water separator) → lift pump → secondary filter → injection pump → injectors → cylinders.</p>
+
+  <p>Three things go wrong with fuel systems on boats. Three things, reliably, every time.</p>
+
+  <p><strong>Diesel bug.</strong> This is a microorganism that grows in the boundary between diesel fuel and any water that's condensed in your tank. It forms a dark, slimy gunk that clogs your filters and starves the engine of fuel. It loves warmth, it loves condensation, and it loves boats that sit unused for weeks between sails. The fix is preventive: keep your tank full (less air means less condensation), use a biocide additive, and change your primary filter regularly.</p>
+
+  <p><strong>Water in the fuel.</strong> Related to diesel bug, but also its own problem. Water gets into diesel tanks through condensation, dodgy fuel from marina pumps, and failing deck fills. Your primary filter should have a water separator bowl - check it regularly and drain off any water you see.</p>
+
+  <p><strong>Air in the fuel lines.</strong> Diesel engines cannot tolerate air in the fuel system. If air gets in - because you ran the tank dry, changed a filter, or have a loose connection - the engine will splutter, lose power, and eventually stop. Getting the air out is called <em>bleeding</em> the fuel system, and it's one of those jobs that's easy once you've done it and mystifying the first time. Every engine is slightly different, but the principle is the same: open a bleed point, pump fuel through until no more bubbles come out, close it up.</p>
+
+  <div class="callout">
+    <h4>Quick reference: fuel system health</h4>
+    <ul>
+      <li><strong>Diesel bug</strong> - keep tank full, add biocide, change filters every 200 hours or annually.</li>
+      <li><strong>Water in fuel</strong> - check the water separator bowl before every passage. Drain if cloudy.</li>
+      <li><strong>Air in lines</strong> - learn your engine's bleed procedure <em>before</em> you need it. Practise at the dock.</li>
+      <li><strong>Filter changes</strong> - carry two spare primary filters and one secondary. Always.</li>
+    </ul>
+  </div>
+
+  <h2>5. Common problems and the pre-race checklist</h2>
+
+  <p>Before any offshore race, we go through the engine systematically. Not because we expect to motor during the race (we don't, and the race rules usually prohibit it), but because when the race is over and we need to get into port, or if something goes seriously wrong and we need to retire, the engine <em>must</em> start. First time, every time.</p>
+
+  <p>Here's what we check:</p>
+
+  <p><strong>Impeller.</strong> The rubber impeller in the raw water pump is the most common point of failure on a marine diesel. The vanes crack, break off, and get swept downstream into the heat exchanger where they cause blockages. We replace ours every season and carry a spare, pre-lubricated with glycerine, ready to swap. If your engine overheats, the impeller is the first thing to check.</p>
+
+  <p><strong>Belts.</strong> The alternator belt charges your batteries. The raw water pump might run off a belt too, depending on your engine. Check for cracks, glazing, and correct tension - you should be able to deflect the belt about 10mm with your thumb. Carry a spare of every belt on the boat.</p>
+
+  <p><strong>Oil.</strong> Check the level (dipstick, engine cold) and the colour. Fresh oil is amber. Oil that's been in too long turns black and gritty. We change oil and the oil filter every 100 hours or at the start of each season, whichever comes first.</p>
+
+  <p><strong>Coolant.</strong> Check the level in the header tank (engine cold - never open it hot). The coolant should be clean and the right colour for your antifreeze type. If you're topping up frequently, you have a leak somewhere. Find it before it finds you mid-passage.</p>
+
+  <p><strong>Exhaust water flow.</strong> Every time you start the engine, look over the stern. You should see a steady flow of water coming out of the exhaust. No water means the raw water circuit isn't working - probably the impeller, possibly a blocked intake or a closed seacock. Shut the engine down immediately. Running a diesel without cooling water will overheat the engine in minutes and the repair bill will make you want to take up golf.</p>
+
+  <div class="pull">Every time you start the engine, look over the stern. Water out the exhaust means the cooling system is working. No water means shut it down. Now.</div>
+
+  <h2>6. What we carry on Alliance</h2>
+
+  <p>We're a small boat - a Dehler 30 OD - so storage is precious. But engine spares don't take up much space, and the weight penalty is negligible compared to the cost of being stuck without a working engine 40 miles offshore.</p>
+
+  <p>Our engine spares kit:</p>
+
+  <ul>
+    <li>Spare impeller (pre-lubricated, in a zip-lock bag) plus gasket</li>
+    <li>Two primary fuel filters and one secondary fuel filter</li>
+    <li>Spare alternator belt and raw water pump belt</li>
+    <li>One litre of engine oil (same grade as what's in the engine)</li>
+    <li>500ml of coolant</li>
+    <li>Diesel biocide additive</li>
+    <li>A small toolkit: 10mm, 13mm spanners, screwdriver, pliers, cable ties</li>
+    <li>Absorbent pads (because diesel in the bilge is inevitable and disgusting)</li>
+    <li>A head torch (because engine work always happens in the dark, ideally while the boat is heeling at 20 degrees)</li>
+  </ul>
+
+  <p>Is this comprehensive? No. But it covers the things that actually fail. In two seasons of racing Alliance offshore, every engine issue we've had could have been solved with what's in that kit. The impeller has saved us once, the fuel filters twice, and the head torch approximately forty-seven times.</p>
+
+  <p>The engine doesn't ask for much. Check the oil, check the coolant, check the belts, change the filters, replace the impeller, and look for water out the back every single time you start it. Do those things and it'll be there when you need it. Skip them and, well - I hope you like golf.</p>
+
+  <hr class="divider" style="margin: 60px 0 40px;"/>
+
+  <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center; justify-content: space-between;">
+    <div>
+      <span class="eyebrow">Up next in the library</span>
+      <h3 style="margin-top:8px;">An introduction to sailing</h3>
+    </div>
+    <a href="introduction.html" class="btn">Read next <span class="arrow">&rarr;</span></a>
+  </div>
+
+</article>
+
+<!-- =================================================== FOOTER -->
+<footer class="footer" style="padding: 12px 0 10px;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span style="font-size:0.82rem; color:rgba(250,246,238,0.55);">© 2026 Annie Stevenson</span>
+    <nav style="display:flex; gap:18px; font-size:0.82rem;">
+      <a href="index.html">Learn</a>
+      <a href="boat.html">The Boat</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="about.html">About</a>
+      <a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="dev-sticker" aria-hidden="true">In Development</div>
+</body>
+</html>
