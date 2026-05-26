@@ -14,7 +14,8 @@
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" /></noscript>
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -41,6 +42,7 @@
             <li><a href="learn/spinnakers.html">What is a spinnaker?</a></li>
             <li><a href="learn/sails.html">Types of sails</a></li>
             <li><a href="learn/Wind,current,tide.html">Wind, current &amp; tide</a></li>
+            <li><a href="learn/inshore-offshore.html">Inshore vs. Offshore</a></li>
           </ul>
         </li>
         <li><a href="boat.html">The Boat</a></li>
@@ -51,11 +53,13 @@
     </nav>
   </div>
 </header>
+<main>
 
 <!-- =================================================== COLOUR BANNER -->
 <div class="tape tape-static" style="background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%); padding: 8px 0;">
   <div class="tape-inner" style="gap: 24px; font-size: 0.95rem;">
-    <span class="dot">·</span><span>Data-driven decision making <span class="dot">·</span> Precision under pressure <span class="dot">·</span> Accessibility through education <span class="dot">·</span> Supporting the next generation <span class="dot">·</span></span>
+    <span>Data-driven decision making <span class="dot">·</span> Precision under pressure <span class="dot">·</span> Accessibility through education <span class="dot">·</span> Supporting the next generation <span class="dot">·</span></span>
+    <span aria-hidden="true">Data-driven decision making <span class="dot">·</span> Precision under pressure <span class="dot">·</span> Accessibility through education <span class="dot">·</span> Supporting the next generation <span class="dot">·</span></span>
   </div>
 </div>
 
@@ -73,19 +77,19 @@
   <div class="wrap">
     <div class="partner-grid">
       <article class="partner-card">
-        <div class="partner-logo"><img src="images-videos/EH%20Horizontal%20Logo%20-%20Black%20(1).png" alt="Employment Hero" style="height: 252px; width: auto;" /></div>
+        <div class="partner-logo"><img src="images-videos/EH%20Horizontal%20Logo%20-%20Black%20(1).png" alt="Employment Hero" width="500" height="500" style="height: 252px; width: auto;" /></div>
         <p>Australian-built employment platform helping more than 300,000 businesses worldwide run HR, payroll, and people management in one place.</p>
         <a href="https://employmenthero.com" class="btn secondary" style="font-size: 0.85rem;">employmenthero.com <span class="arrow">&rarr;</span></a>
       </article>
 
       <article class="partner-card">
-        <div class="partner-logo"><img src="images-videos/AWS_logo_RGB_1c_Gray850.png" alt="AWS" style="height: 40px; width: auto;" /></div>
+        <div class="partner-logo"><img src="images-videos/AWS_logo_RGB_1c_Gray850.png" alt="AWS" width="1254" height="750" style="height: 40px; width: auto;" /></div>
         <p>One of the world's largest cloud platforms, helping millions of businesses worldwide run the technologies behind the tools we know and love.</p>
         <a href="https://aws.amazon.com" class="btn secondary" style="font-size: 0.85rem;">aws.amazon.com <span class="arrow">&rarr;</span></a>
       </article>
 
       <article class="partner-card">
-        <div class="partner-logo"><img src="images-videos/Mantel Logo - Navy@2x.png" alt="Mantel" style="height: 40px; width: auto;" /></div>
+        <div class="partner-logo"><img src="images-videos/Mantel Logo - Navy@2x.png" alt="Mantel" width="1042" height="214" style="height: 40px; width: auto;" /></div>
         <p>Australian-owned engineering consultancy helping hundreds of organisations design, build, and run their systems as the technology underneath keeps shifting.</p>
         <a href="https://mantelgroup.com.au" class="btn secondary" style="font-size: 0.85rem;">mantelgroup.com.au <span class="arrow">&rarr;</span></a>
       </article>

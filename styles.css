@@ -637,6 +637,21 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .tape-inner span { display: inline-flex; align-items: center; gap: 40px; }
 .tape-inner .dot { color: var(--chartreuse); }
+.tape-static .tape-inner > span[aria-hidden] { display: none; }
+@media (max-width: 720px) {
+  .tape-static .tape-inner {
+    display: block;
+    animation: scroll 25s linear infinite;
+    white-space: nowrap;
+    overflow: visible;
+    width: max-content;
+  }
+  .tape-static .tape-inner span {
+    display: inline !important;
+    gap: 0;
+  }
+  .tape-static .tape-inner > span[aria-hidden] { display: inline !important; }
+}
 @keyframes scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -1017,6 +1032,9 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
     max-width: 520px;
     margin: 0 auto;
   }
+  .race-map-title h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
   .race-map-cards {
     padding-top: 0;
     align-items: center;
@@ -1024,6 +1042,19 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   .race-map-card {
     max-width: 100%;
     width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .race-map-title {
+    top: 10%;
+    left: 8%;
+    max-width: 200px;
+  }
+  .race-map-title h1 {
+    font-size: 1.4rem;
+  }
+  .race-map-title .eyebrow {
+    font-size: 0.55rem;
   }
 }
 
