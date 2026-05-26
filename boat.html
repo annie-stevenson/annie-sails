@@ -5,12 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Boat - Employment Hero Alliance | Annie Stevenson</title>
 <meta name="description" content="Employment Hero Alliance - a Dehler 30 One Design built for the double-handed Olympic class. Borrowed from owner Ben Thompson for the season." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:title" content="The Boat - Employment Hero Alliance" />
+<meta property="og:description" content="Employment Hero Alliance - a Dehler 30 One Design built for the double-handed Olympic class. Borrowed from owner Ben Thompson for the season." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://anniesails.com/boat.html" />
+<meta property="og:image" content="https://anniesails.com/images-videos/Alliance-drone.JPG" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <header class="nav">
   <div class="nav-inner">
@@ -22,6 +30,7 @@
       </svg>
       Annie Sails
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false');this.nextElementSibling.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Learn</a></li>
@@ -35,7 +44,7 @@
 </header>
 
 <!-- =================================================== INTRO -->
-<section class="article-hero" style="padding-bottom: 0; margin-top: -24px;">
+<section id="main" class="article-hero" style="padding-bottom: 0; margin-top: -24px;">
   <div class="wrap-narrow">
     <span class="eyebrow">Meet the boat</span>
     <h1>Employment Hero <span class="italic" style="color:var(--blue);">Alliance</span></h1>
@@ -56,7 +65,7 @@
       <span class="eyebrow">From the drone</span>
       <p class="tagline" style="font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.18em; color: var(--ink-soft); margin: 0; padding-top: 0.18rem; line-height: 1.4;">Aerials by Stuart Don - April 2026. Training on Sydney Harbour.</p>
     </div>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
+    <div class="gallery-scroll" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
       <img src="images-videos/Alliance-drone.JPG" alt="Alliance from above" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); width: 100%;"/>
       <img src="images-videos/Alliance-drone-2.JPG" alt="Alliance aerial training" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); width: 100%;"/>
       <img src="images-videos/Alliance-Photo-3.JPG" alt="Sailing from the front" loading="lazy" style="aspect-ratio: 4/5; object-fit: cover; border-radius: var(--radius); width: 100%;"/>
@@ -108,36 +117,16 @@
 </section>
 
 <!-- =================================================== FOOTER -->
-<footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <h3>Annie Stevenson</h3>
-        <p>A double-handed offshore campaign, in public.</p>
-        <p style="margin-top: 16px;"><a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">@_annie_sails on Instagram &rarr;</a></p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">Learn</a></li>
-          <li><a href="boat.html">The Boat</a></li>
-          <li><a href="races.html">The Races</a></li>
-          <li><a href="sponsors.html">The Sponsors</a></li>
-          <li><a href="about.html">About Me</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Follow</h4>
-        <ul>
-          <li><a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="#">Newsletter</a></li>
-          <li><a href="mailto:hello@anniesails.com">Email</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Annie Stevenson </span>
-    </div>
+<footer class="footer" style="padding: 12px 0 10px;">
+  <div class="wrap" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <span style="font-size:0.82rem; color:rgba(250,246,238,0.55);">© 2026 Annie Stevenson</span>
+    <nav style="display:flex; gap:18px; font-size:0.82rem;">
+      <a href="index.html">Learn</a>
+      <a href="boat.html">The Boat</a>
+      <a href="sponsors.html">Sponsors</a>
+      <a href="about.html">About</a>
+      <a href="https://www.instagram.com/_annie_sails/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
   </div>
 </footer>
 

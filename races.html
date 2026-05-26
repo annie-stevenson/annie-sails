@@ -5,12 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Races - Annie Stevenson</title>
 <meta name="description" content="The 2026 double-handed offshore season aboard Employment Hero Alliance - Sydney to Gold Coast and Gold Coast to Mackay." />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<meta property="og:title" content="The Races - Annie Stevenson" />
+<meta property="og:description" content="The 2026 double-handed offshore season aboard Employment Hero Alliance - Sydney to Gold Coast and Gold Coast to Mackay." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://anniesails.com/races.html" />
+<meta property="og:image" content="https://anniesails.com/images-videos/Alliance-drone-sydney.JPG" />
+<meta name="twitter:card" content="summary_large_image" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@400;500;600;700&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<a href="#main" class="skip-link">Skip to content</a>
 
 <header class="nav">
   <div class="nav-inner">
@@ -22,6 +30,7 @@
       </svg>
       Annie Sails
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false');this.nextElementSibling.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Learn</a></li>
@@ -35,7 +44,7 @@
 </header>
 
 <!-- =================================================== RACE MAP HERO -->
-<section class="race-map-section">
+<section id="main" class="race-map-section">
   <div class="race-map-layout">
 
     <!-- LEFT: Map with title overlay -->
@@ -86,18 +95,6 @@
     <!-- RIGHT: Race detail cards -->
     <div class="race-map-cards">
       <article class="race-map-card">
-        <span class="eyebrow">Race 2 · 31 July 2026</span>
-        <h3 class="mt-sm">Gold Coast to Mackay</h3>
-        <div style="display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 12px;">
-          <span style="background:var(--chartreuse); color:var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">520 nm</span>
-          <span style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~3.5 days</span>
-          <span style="background:transparent; color:var(--ink-soft); border:1px solid var(--line); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Double-handed</span>
-        </div>
-        <p style="margin-bottom:8px;">Further north - past Fraser Island and into tropical Queensland. Promises some glamour downwind sailing, and a chance to see what the little boat can really do.</p>
-        <p><a href="https://goldcoastmackay.com" target="_blank" rel="noopener noreferrer">goldcoastmackay.com &rarr;</a></p>
-      </article>
-
-      <article class="race-map-card">
         <span class="eyebrow">Race 1 · 25 July 2026</span>
         <h3 class="mt-sm">Sydney to Gold Coast</h3>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 12px;">
@@ -107,6 +104,18 @@
         </div>
         <p style="margin-bottom:8px;">Sydney Harbour to Queensland, up the NSW coast. The East Australian Current - three knots of southerly flow - is always the strategic puzzle. Our first extended offshore of the season.</p>
         <p><a href="https://goldcoast.cycaracing.com" target="_blank" rel="noopener noreferrer">goldcoast.cycaracing.com &rarr;</a></p>
+      </article>
+
+      <article class="race-map-card">
+        <span class="eyebrow">Race 2 · 31 July 2026</span>
+        <h3 class="mt-sm">Gold Coast to Mackay</h3>
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 12px;">
+          <span style="background:var(--chartreuse); color:var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">520 nm</span>
+          <span style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~3.5 days</span>
+          <span style="background:transparent; color:var(--ink-soft); border:1px solid var(--line); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Double-handed</span>
+        </div>
+        <p style="margin-bottom:8px;">Further north - past Fraser Island and into tropical Queensland. Promises some glamour downwind sailing, and a chance to see what the little boat can really do.</p>
+        <p><a href="https://goldcoastmackay.com" target="_blank" rel="noopener noreferrer">goldcoastmackay.com &rarr;</a></p>
       </article>
 
     </div>

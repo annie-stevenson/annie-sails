@@ -209,8 +209,55 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .nav-links a:hover::after,
 .nav-links a.active::after { transform: scaleX(1); }
 
+/* ---------- Mobile nav toggle ---------- */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--purple);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 720px) {
-  .nav-links { gap: 16px; font-size: 0.82rem; flex-wrap: wrap; justify-content: flex-end; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cream);
+    padding: 16px var(--gutter) 20px;
+    gap: 4px;
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 8px 24px rgba(40, 4, 65, 0.1);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
 }
 
 /* ---------- Buttons ---------- */
@@ -444,8 +491,8 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   .reel-title-card { grid-column: 1 / -1; }
 }
 @media (max-width: 420px) {
-  .reels-with-title { grid-template-columns: 1fr; }
-  .reel-title-card { grid-column: 1; }
+  .reels-with-title { grid-template-columns: repeat(2, 1fr); }
+  .reel-title-card { grid-column: 1 / -1; }
 }
 
 /* ---------- "Write-up coming" badge on reel cards ---------- */
@@ -1040,8 +1087,11 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .partner-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+@media (max-width: 900px) {
+  .partner-grid { grid-template-columns: 1fr; }
 }
 .partner-card {
   background: var(--cream);
@@ -1277,3 +1327,126 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .mb-sm { margin-bottom: 16px; }
 .mb-md { margin-bottom: 28px; }
 .mb-lg { margin-bottom: 50px; }
+
+/* ==========================================================
+   MOBILE OPTIMIZATIONS — reduce scroll depth, improve density
+   ========================================================== */
+
+@media (max-width: 640px) {
+
+  /* --- Tighter section padding --- */
+  section { padding: clamp(28px, 4vw, 48px) 0; }
+
+  /* --- Compact reel cards: 2-col with shorter ratio --- */
+  .reels-with-title .reel {
+    aspect-ratio: 3/4;
+  }
+  .reels-with-title {
+    gap: 10px;
+  }
+
+  /* --- Compact title card --- */
+  .reel-title-card {
+    padding: 22px 20px;
+    min-height: auto;
+  }
+  .reel-title-card h2 {
+    font-size: 1.2rem !important;
+    margin-top: 8px !important;
+  }
+  .reel-title-card p {
+    font-size: 0.78rem !important;
+    line-height: 1.5 !important;
+  }
+  .reel-title-card .btn {
+    padding: 6px 10px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* --- Reel card text tighter --- */
+  .reel-meta { padding: 12px 14px 14px; }
+  .reel-title { font-size: 1rem; }
+  .reel-tag { padding: 5px 10px; font-size: 0.62rem; }
+
+  /* --- Boat page: horizontal-scroll gallery --- */
+  .gallery-scroll {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  .gallery-scroll img {
+    flex: 0 0 75vw !important;
+    width: 75vw !important;
+    scroll-snap-align: start;
+    aspect-ratio: 4/5 !important;
+    border-radius: var(--radius);
+  }
+
+  /* --- About page: constrain feature images --- */
+  .feature-visual {
+    aspect-ratio: 16/10 !important;
+  }
+  .feature-visual img {
+    object-position: center 20%;
+  }
+
+  /* --- About page: horizontal-scroll photo gallery --- */
+  .about-gallery {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 12px;
+    padding-bottom: 8px;
+  }
+  .about-gallery img {
+    flex: 0 0 70vw !important;
+    width: 70vw !important;
+    scroll-snap-align: start;
+    aspect-ratio: 4/5 !important;
+    border-radius: var(--radius);
+  }
+
+  /* --- Sponsors: smaller logo area --- */
+  .partner-logo {
+    height: 80px;
+    margin-bottom: 16px;
+  }
+  .partner-logo img {
+    max-height: 100%;
+    width: auto;
+  }
+  .partner-card {
+    padding: 22px;
+    min-height: auto;
+  }
+
+  /* --- Smaller headings on mobile --- */
+  h1 { font-size: clamp(2rem, 8vw, 2.6rem); }
+  .article-hero h1 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+
+  /* --- Mission section tighter --- */
+  .wrap-narrow { padding: 0 var(--gutter); }
+
+  /* --- Boat page: constrain the large specs image --- */
+  .boat-specs-feature > div:last-child {
+    aspect-ratio: 1/1 !important;
+  }
+  .boat-specs-feature > div:last-child img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* --- "Coming soon" badge tighter --- */
+  .reel [style*="position: absolute"][style*="top: 15%"] {
+    top: 10% !important;
+    font-size: 0.5rem !important;
+  }
+
+  /* --- Proof bar compact --- */
+  .proof-grid { gap: 10px; }
+  .proof-num { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+}
