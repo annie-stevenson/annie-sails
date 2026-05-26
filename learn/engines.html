@@ -21,11 +21,21 @@
         <path d="M22 8 L34 30 L22 30 Z" fill="#4384b4"/>
         <path d="M4 33 Q12 36 20 33 T36 33 L36 36 L4 36 Z" fill="#e6f253"/>
       </svg>
-      Annie Stevenson
+      Annie Sails
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false');this.nextElementSibling.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav>
       <ul class="nav-links">
-        <li><a href="../index.html" class="active">Learn</a></li>
+        <li class="has-dropdown"><a href="../index.html" class="active">Learn</a>
+          <ul class="nav-dropdown">
+            <li><span class="dropdown-label">Articles</span></li>
+            <li><a href="introduction.html">Meet the boat</a></li>
+            <li><a href="engines.html">The workings of an engine</a></li>
+            <li><a href="spinnakers.html">What is a spinnaker?</a></li>
+            <li><a href="sails.html">Types of sails</a></li>
+            <li><a href="Wind,current,tide.html">Wind, current &amp; tide</a></li>
+          </ul>
+        </li>
         <li><a href="../boat.html">The Boat</a></li>
         <li><a href="../races.html">The Races</a></li>
         <li><a href="../sponsors.html">The Sponsors</a></li>
@@ -149,21 +159,30 @@
 
   <div class="pull">Every time you start the engine, look over the stern. Water out the exhaust means the cooling system is working. No water means shut it down. Now.</div>
 
-  <h2>6. What we carry on Alliance</h2>
+  <h2>6. When it won't start</h2>
+
+  <p>It will happen. Probably at the worst possible time. Here are the three most common scenarios and how to work through them without panic.</p>
+
+  <p><strong>Engine cranks but won't fire.</strong> This is almost always a fuel problem. Either the tank is empty (check it - people run out more often than they'll admit), the primary fuel filter is clogged, or there's air in the lines. Start simple: check the fuel level. If the tank isn't empty, swap the primary filter. If that doesn't fix it, you'll need to bleed the fuel system to purge the air. This is where having practised the bleed procedure at the dock, in calm water, with daylight and patience, pays off enormously.</p>
+
+  <p><strong>Engine starts but overheats.</strong> Go straight to the stern - is water coming out the exhaust? If not, the raw water circuit has failed. Most likely the impeller. Shut the engine down immediately (running without cooling water will cause serious damage within minutes), swap the impeller, confirm the seacock is open (yes, it happens), and restart. If water IS coming out but the temperature is still climbing, the issue is on the freshwater side - low coolant, a failed thermostat, or a partially blocked heat exchanger. Check coolant level first.</p>
+
+  <p><strong>Engine starts but dies under load.</strong> This is fuel starvation. The engine can idle on limited fuel flow, but the moment you put it in gear and increase the demand, it can't get enough. Usually a partially clogged filter or water sitting in the fuel. Change the primary filter and drain the water separator bowl.</p>
+
+  <div class="pull">Work through the system logically. Fuel, air, cooling - those are the three things an engine needs. Figure out which one is missing and you've found your problem.</div>
+
+  <h2>7. What we carry on Alliance</h2>
 
   <p>We're a small boat - a Dehler 30 OD - so storage is precious. But engine spares don't take up much space, and the weight penalty is negligible compared to the cost of being stuck without a working engine 40 miles offshore.</p>
 
   <p>Our engine spares kit:</p>
 
   <ul>
-    <li>Spare impeller (pre-lubricated, in a zip-lock bag) plus gasket</li>
-    <li>Two primary fuel filters and one secondary fuel filter</li>
-    <li>Spare alternator belt and raw water pump belt</li>
+    <li>Spare impeller </li>
     <li>One litre of engine oil (same grade as what's in the engine)</li>
     <li>500ml of coolant</li>
-    <li>Diesel biocide additive</li>
     <li>A small toolkit: 10mm, 13mm spanners, screwdriver, pliers, cable ties</li>
-    <li>Absorbent pads (because diesel in the bilge is inevitable and disgusting)</li>
+    <li>Absorbent pads (because diesel in the bilge is inevitable and something we like to avoid)</li>
     <li>A head torch (because engine work always happens in the dark, ideally while the boat is heeling at 20 degrees)</li>
   </ul>
 
@@ -197,6 +216,17 @@
   </div>
 </footer>
 
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400)});
+  var dd=document.querySelector('.has-dropdown');
+  if(dd&&window.innerWidth<=720){dd.querySelector('a').addEventListener('click',function(e){if(!dd.classList.contains('dropdown-open')){e.preventDefault();dd.classList.toggle('dropdown-open')}});}
+})();
+</script>
 <div class="dev-sticker" aria-hidden="true">In Development</div>
 </body>
 </html>

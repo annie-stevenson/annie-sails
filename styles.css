@@ -209,6 +209,91 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .nav-links a:hover::after,
 .nav-links a.active::after { transform: scaleX(1); }
 
+/* ---------- Learn dropdown ---------- */
+.nav-links .has-dropdown { position: relative; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px);
+  left: -16px;
+  min-width: 240px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(40, 4, 65, 0.12);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 60;
+}
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+}
+.has-dropdown:hover .nav-dropdown { display: block; }
+.nav-dropdown a {
+  display: block;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  border: none;
+  white-space: nowrap;
+}
+.nav-dropdown a::after { display: none; }
+.nav-dropdown a:hover {
+  background: rgba(40, 4, 65, 0.05);
+  color: var(--purple);
+}
+.nav-dropdown .dropdown-label {
+  display: block;
+  padding: 6px 18px 4px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Back to top ---------- */
+.back-to-top {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--purple);
+  color: var(--cream);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 40;
+  box-shadow: 0 4px 12px rgba(40, 4, 65, 0.2);
+}
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.back-to-top:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+}
+.back-to-top svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* ---------- Mobile nav toggle ---------- */
 .nav-toggle {
   display: none;
@@ -258,6 +343,18 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
     padding: 10px 0;
     font-size: 0.95rem;
   }
+  .has-dropdown:hover .nav-dropdown { display: none; }
+  .has-dropdown.dropdown-open .nav-dropdown { display: block; }
+  .nav-dropdown {
+    position: static;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 4px 16px;
+    min-width: 0;
+  }
+  .nav-dropdown::before { display: none; }
+  .nav-dropdown a { padding: 6px 0; font-size: 0.88rem; }
+  .nav-dropdown .dropdown-label { padding: 4px 0 2px; }
 }
 
 /* ---------- Buttons ---------- */

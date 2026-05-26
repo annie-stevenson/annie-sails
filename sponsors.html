@@ -33,7 +33,16 @@
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false');this.nextElementSibling.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav>
       <ul class="nav-links">
-        <li><a href="index.html">Learn</a></li>
+        <li class="has-dropdown"><a href="index.html">Learn</a>
+          <ul class="nav-dropdown">
+            <li><span class="dropdown-label">Articles</span></li>
+            <li><a href="learn/introduction.html">Meet the boat</a></li>
+            <li><a href="learn/engines.html">The workings of an engine</a></li>
+            <li><a href="learn/spinnakers.html">What is a spinnaker?</a></li>
+            <li><a href="learn/sails.html">Types of sails</a></li>
+            <li><a href="learn/Wind,current,tide.html">Wind, current &amp; tide</a></li>
+          </ul>
+        </li>
         <li><a href="boat.html">The Boat</a></li>
         <li><a href="races.html">The Races</a></li>
         <li><a href="sponsors.html" class="active">The Sponsors</a></li>
@@ -88,7 +97,7 @@
 <section style="background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%); padding: 40px 0; text-align: center;">
   <div class="wrap-narrow">
     <h2 style="color: var(--cream); margin-bottom: 10px;">Join the crew.</h2>
-    <p style="color: rgba(250,246,238,0.8); margin-bottom: 20px;">Interested in partnering? I'm always open to a conversation with partners who share the campaign’s values.</p>
+    <p style="color: rgba(250,246,238,0.8); margin-bottom: 20px;">Interested in partnering? We're always open to a conversation with partners who share the campaign’s values.</p>
     <a href="mailto:hello@anniesails.com?subject=Sailing%20campaign%20partnership" class="btn accent" style="font-size: 0.95rem;">Get in touch <span class="arrow">&rarr;</span></a>
   </div>
 </section>
@@ -107,6 +116,17 @@
   </div>
 </footer>
 
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400)});
+  var dd=document.querySelector('.has-dropdown');
+  if(dd&&window.innerWidth<=720){dd.querySelector('a').addEventListener('click',function(e){if(!dd.classList.contains('dropdown-open')){e.preventDefault();dd.classList.toggle('dropdown-open')}});}
+})();
+</script>
 <div class="dev-sticker" aria-hidden="true">In Development</div>
 </body>
 </html>

@@ -21,11 +21,21 @@
         <path d="M22 8 L34 30 L22 30 Z" fill="#4384b4"/>
         <path d="M4 33 Q12 36 20 33 T36 33 L36 36 L4 36 Z" fill="#e6f253"/>
       </svg>
-      Annie Stevenson
+      Annie Sails
     </a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='false');this.nextElementSibling.querySelector('.nav-links').classList.toggle('open')"><span></span><span></span><span></span></button>
     <nav>
       <ul class="nav-links">
-        <li><a href="../index.html" class="active">Learn</a></li>
+        <li class="has-dropdown"><a href="../index.html" class="active">Learn</a>
+          <ul class="nav-dropdown">
+            <li><span class="dropdown-label">Articles</span></li>
+            <li><a href="introduction.html">Meet the boat</a></li>
+            <li><a href="engines.html">The workings of an engine</a></li>
+            <li><a href="spinnakers.html">What is a spinnaker?</a></li>
+            <li><a href="sails.html">Types of sails</a></li>
+            <li><a href="Wind,current,tide.html">Wind, current &amp; tide</a></li>
+          </ul>
+        </li>
         <li><a href="../boat.html">The Boat</a></li>
         <li><a href="../races.html">The Races</a></li>
         <li><a href="../sponsors.html">The Sponsors</a></li>
@@ -167,11 +177,23 @@
     </ul>
   </div>
 
+  <h2>When things go wrong</h2>
+
+  <p>Spinnakers are the most powerful and the most dramatic sails on the boat. When they go right, they're exhilarating. When they go wrong, they go wrong fast. Knowing what can happen - and how to respond - is as important as knowing how to fly them in the first place.</p>
+
+  <p><strong>The broach.</strong> This is the big one. A broach happens when the spinnaker overpowers the rudder and the boat rounds up violently into the wind, heeling hard onto its side. It usually happens in gusts, especially when the helmsperson is slow to bear away or the sheet isn't eased quickly enough. The boat suddenly swings broadside to the wind, heels to an alarming angle, and the spinnaker flogs violently overhead. The fix is prevention: ease the sheet in gusts <em>before</em> they overpower you, bear away early, and keep the boat as flat as possible. If you do broach, release the sheet completely - let it run - and the boat will come back upright.</p>
+
+  <p><strong>The wrap.</strong> A spinnaker wrap happens when the sail twists around the forestay or around itself, usually during a gybe or in a lull when the sail collapses and then refills twisted. It turns your spinnaker into a tight, useless spiral that you can't hoist or drop. On a double-handed boat, this is a serious problem because you may not be able to send someone safely to the bow to unwrap it in heavy conditions. Prevention: keep the sail full during manoeuvres and don't let it collapse. If it does wrap, try sailing deeper to unload the pressure, then slowly unwind it by sheeting from alternating sides.</p>
+
+  <p><strong>The blowout.</strong> High loads and ageing cloth eventually meet, and the sail tears. It usually goes along a seam or at a stress point like the clew or tack. If a spinnaker starts to rip, drop it immediately - the tear will only get bigger under load. We carry a basic sail repair kit on Alliance (sticky-back Dacron tape) that can get a torn sail back in service for light conditions, but anything structural needs a sailmaker.</p>
+
+  <div class="pull">All three problems get worse the longer you wait. The best spinnaker sailors aren't the ones who never have problems - they're the ones who recognise the early signs and act before it escalates.</div>
+
   <h2>One last thing</h2>
 
-  <p>The reason these sails exist at all is the same reason engines do: the wind isn't always behind you. Boats are remarkably efficient at converting wind into forward motion, but only if you give them the right sail for the angle. A mainsail and a jib will get you upwind beautifully. The moment you bear away, those same sails start collapsing. That's the gap a spinnaker fills.</p>
+  <p>The reason these sails exist at all is the same reason engines do: the wind isn't always behind you. Boats are remarkably efficient at converting wind into forward motion, but only if you give them the right sail for the angle. A mainsail and a jib will get you upwind beautifully. The moment you bear away past about 90°, those same sails start collapsing and losing power. That's the gap a spinnaker fills - capturing the wind from behind and turning it into speed.</p>
 
-  <p>Next time you see a boat with a giant coloured sail at the front, you'll know which one it is just by looking at the angle of the wind. Which is, in fairness, a very specific party trick.</p>
+  <p>Start by understanding which sail does what (you've just done that). Then learn when to change between them - that comes with time on the water. And when something goes wrong, remember: ease the sheet first, ask questions later. That single instinct will get you out of most spinnaker trouble before it becomes spinnaker drama.</p>
 
   <hr class="divider" style="margin: 60px 0 40px;"/>
 
@@ -199,6 +221,17 @@
   </div>
 </footer>
 
+<button class="back-to-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+<script>
+(function(){
+  var btn=document.querySelector('.back-to-top');
+  window.addEventListener('scroll',function(){btn.classList.toggle('visible',window.scrollY>400)});
+  var dd=document.querySelector('.has-dropdown');
+  if(dd&&window.innerWidth<=720){dd.querySelector('a').addEventListener('click',function(e){if(!dd.classList.contains('dropdown-open')){e.preventDefault();dd.classList.toggle('dropdown-open')}});}
+})();
+</script>
 <div class="dev-sticker" aria-hidden="true">In Development</div>
 </body>
 </html>
