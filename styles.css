@@ -323,7 +323,7 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 
 @media (max-width: 720px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: auto; }
   .nav-links {
     display: none;
     flex-direction: column;
@@ -586,6 +586,13 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 @media (max-width: 640px) {
   .reels-with-title { grid-template-columns: repeat(2, 1fr); }
   .reel-title-card { grid-column: 1 / -1; }
+  /* Center lone tiles (5th reel and last reel) on mobile 2-col grid */
+  .reels-with-title > .reel:nth-child(5),
+  .reels-with-title > .reel:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 5px);
+    justify-self: center;
+  }
 }
 @media (max-width: 420px) {
   .reels-with-title { grid-template-columns: repeat(2, 1fr); }
