@@ -602,21 +602,23 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   .reel-title-card { grid-column: 1 / -1; }
 }
 
-/* ---------- "Write-up coming" badge on reel cards ---------- */
-.reel-soon {
+/* ---------- "Coming soon" badge on reel cards ---------- */
+.reel-soon,
+.coming-soon-tag {
   position: absolute;
-  bottom: 14px;
-  right: 14px;
-  background: transparent;
-  color: var(--chartreuse);
-  border: 1px solid var(--chartreuse);
-  padding: 4px 10px;
+  top: auto;
+  bottom: 68px;
+  left: 14px;
+  background: rgba(230, 242, 83, 0.95);
+  color: var(--purple);
+  padding: 3px 8px;
   border-radius: 999px;
-  font-size: 0.62rem;
+  font-size: 0.6rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   z-index: 3;
+  width: fit-content;
 }
 
 /* ---------- Marquee / running tape ---------- */
@@ -1475,6 +1477,12 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   /* --- Tighter section padding --- */
   section { padding: clamp(28px, 4vw, 48px) 0; }
 
+  /* --- Hero intro line: allow wrapping on mobile --- */
+  .hero-intro-line {
+    white-space: normal !important;
+    max-width: 50ch;
+  }
+
   /* --- Compact reel cards: 2-col with shorter ratio --- */
   .reels-with-title .reel {
     aspect-ratio: 3/4;
@@ -1489,12 +1497,15 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
     min-height: auto;
   }
   .reel-title-card h2 {
-    font-size: 1.2rem !important;
+    font-size: 1.3rem !important;
     margin-top: 8px !important;
   }
   .reel-title-card p {
-    font-size: 0.78rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.5 !important;
+  }
+  .reel-title-card p span[style*="script"] {
+    font-size: 1.1rem !important;
   }
   .reel-title-card .btn {
     padding: 6px 10px !important;
@@ -1505,6 +1516,13 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   .reel-meta { padding: 12px 14px 14px; }
   .reel-title { font-size: 1rem; }
   .reel-tag { padding: 5px 10px; font-size: 0.62rem; }
+
+  /* --- Coming soon tag: bigger on mobile --- */
+  .coming-soon-tag {
+    font-size: 0.55rem !important;
+    bottom: 56px !important;
+    padding: 3px 7px !important;
+  }
 
   /* --- Boat page: horizontal-scroll gallery --- */
   .gallery-scroll {
