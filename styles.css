@@ -460,7 +460,10 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   align-items: end;
 }
 @media (max-width: 640px) {
-  .proof-grid { grid-template-columns: 1fr; gap: 16px; text-align: left; }
+  .proof-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; text-align: center; }
+}
+@media (max-width: 340px) {
+  .proof-grid { grid-template-columns: 1fr !important; text-align: left; }
 }
 .proof-stat {
   display: flex;
@@ -987,9 +990,9 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .race-map-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: clamp(16px, 2.5vw, 36px);
-  align-items: start;
+  align-items: center;
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--gutter);
@@ -1001,7 +1004,7 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .race-map-svg {
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 720px;
   display: block;
 }
 .race-map-title {
