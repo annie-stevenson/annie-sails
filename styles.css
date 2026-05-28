@@ -39,6 +39,14 @@
 
 html { scroll-behavior: smooth; }
 
+/* ---------- Copy protection ---------- */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /* ---------- Unified chartreuse accent system ---------- */
 ::selection {
   background: var(--chartreuse);
