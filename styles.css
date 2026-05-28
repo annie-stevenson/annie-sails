@@ -57,21 +57,6 @@ body {
   color: var(--purple);
 }
 
-/* Magazine-style chartreuse rule before key headings - used opt-in via .h2-rule */
-.h2-rule {
-  position: relative;
-  padding-left: 18px;
-}
-.h2-rule::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0.35em;
-  width: 6px;
-  height: 0.65em;
-  background: var(--chartreuse);
-  border-radius: 2px;
-}
-
 body {
   font-family: var(--sans);
   color: var(--ink);
@@ -412,94 +397,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   position: relative;
   overflow: hidden;
 }
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: clamp(30px, 5vw, 70px);
-  align-items: center;
-}
-@media (max-width: 860px) {
-  .hero-grid { grid-template-columns: 1fr; }
-}
-.hero-copy h1 { margin-bottom: 28px; }
-.hero-copy h1 .italic { color: var(--blue); }
-.hero-copy p.lede {
-  font-size: 1.18rem;
-  color: var(--ink-soft);
-  max-width: 48ch;
-  margin-bottom: 36px;
-  line-height: 1.55;
-}
-.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; }
-
-.hero-visual {
-  position: relative;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--blue) 0%, var(--purple) 100%);
-}
-.hero-visual svg.boat { width: 100%; height: 100%; display: block; }
-
-.hero-sticker {
-  position: absolute;
-  background: var(--chartreuse);
-  color: var(--purple);
-  padding: 10px 18px;
-  border-radius: 999px;
-  font-family: var(--script);
-  font-size: 1.4rem;
-  transform: rotate(-6deg);
-  box-shadow: 0 6px 22px rgba(40, 4, 65, 0.18);
-  z-index: 2;
-}
-
-/* ---------- Proof bar (credibility stats under hero) ---------- */
-.proof-bar {
-  padding: 28px 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  background: var(--cream);
-}
-.proof-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 3vw, 40px);
-  align-items: end;
-}
-@media (max-width: 640px) {
-  .proof-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px; text-align: center; }
-}
-@media (max-width: 340px) {
-  .proof-grid { grid-template-columns: 1fr !important; text-align: left; }
-}
-.proof-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.proof-num {
-  font-family: var(--serif);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  line-height: 1;
-  color: var(--purple);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-}
-.proof-unit {
-  font-size: 0.6em;
-  color: var(--ink-soft);
-  margin-left: 4px;
-  font-style: italic;
-}
-.proof-label {
-  font-family: var(--sans);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
 /* ---------- Reels + title card grid (home page library) ---------- */
 .reels-with-title {
   display: grid;
