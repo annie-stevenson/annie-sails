@@ -500,72 +500,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   color: var(--ink-soft);
 }
 
-/* ---------- Bridge tagline (links campaign + academy identities) ---------- */
-.bridge-line {
-  font-family: var(--script);
-  font-size: 1.5rem;
-  color: var(--purple-soft);
-  margin: 14px 0 0;
-  letter-spacing: 0.01em;
-  line-height: 1;
-}
-
-/* ---------- Races hero italic (sharp chartreuse on dark overlay) ---------- */
-.races-hero-italic {
-  color: var(--chartreuse);
-  text-shadow:
-    0 0 1px rgba(28, 5, 48, 0.9),
-    0 2px 18px rgba(28, 5, 48, 0.8);
-  letter-spacing: -0.005em;
-  font-weight: 400;
-}
-
-/* ---------- Editorial section (Why this site exists) ---------- */
-.editorial {
-  padding: clamp(56px, 8vw, 96px) 0 clamp(40px, 5vw, 56px);
-  text-align: center;
-}
-.editorial-text { display: flex; flex-direction: column; align-items: center; }
-.editorial-h2 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
-  position: relative;
-  display: inline-block;
-}
-.editorial-h2::before {
-  content: '';
-  display: block;
-  width: 36px;
-  height: 2px;
-  background: var(--chartreuse);
-  margin: 0 auto 22px;
-}
-.editorial-lede {
-  font-family: var(--serif);
-  font-size: clamp(1.1rem, 1.6vw, 1.25rem);
-  line-height: 1.55;
-  color: var(--ink-soft);
-  max-width: 56ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-.editorial-banner {
-  width: 100%;
-  height: clamp(280px, 42vw, 520px);
-  overflow: hidden;
-  position: relative;
-  margin: clamp(20px, 3vw, 36px) 0 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.editorial-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 8s ease-out;
-}
-.editorial-banner:hover img { transform: scale(1.04); }
-
 /* ---------- Reels + title card grid (home page library) ---------- */
 .reels-with-title {
   display: grid;
@@ -814,20 +748,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .reel:hover .reel-play-icon {
   transform: translateY(0);
 }
-.reel-duration {
-  position: absolute;
-  top: 14px; right: 14px;
-  background: rgba(28, 5, 48, 0.78);
-  color: var(--cream);
-  padding: 5px 10px;
-  border-radius: 999px;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  z-index: 3;
-  backdrop-filter: blur(4px);
-}
-
 /* ---------- Featured logos strip ---------- */
 .logos {
   background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%);
@@ -884,20 +804,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 
 .logos-list .logo-img:hover { opacity: 1; }
-.logo-placeholder {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 22px;
-  padding: 0 14px;
-  border: 1px dashed rgba(250, 246, 238, 0.5);
-  border-radius: 4px;
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(250, 246, 238, 0.6);
-}
 .logos-link {
   font-family: var(--sans);
   font-size: 0.72rem;
@@ -926,6 +832,55 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   z-index: 100;
   pointer-events: none;
 }
+@media (max-width: 720px) {
+  .dev-sticker { display: none; }
+}
+
+/* ---------- Article-end follow CTA ---------- */
+.article-follow-cta {
+  text-align: center;
+  padding: 40px var(--gutter);
+  margin: 0 auto;
+  max-width: 600px;
+}
+.article-follow-cta p {
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.article-follow-cta .btn {
+  font-size: 0.88rem;
+}
+
+/* ---------- Article illustrations ---------- */
+.illustration {
+  margin: 40px 0;
+  text-align: center;
+}
+.illustration img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+.illustration figcaption {
+  font-family: var(--script);
+  font-size: 1rem;
+  color: var(--ink-soft);
+  margin-top: 10px;
+  line-height: 1.4;
+}
+/* Compact variant for inline illustrations */
+.illustration.compact img {
+  max-width: 520px;
+}
+/* Wide variant for panoramic illustrations */
+.illustration.wide img {
+  max-width: 100%;
+}
 
 /* ---------- Two-column feature block ---------- */
 .feature {
@@ -952,46 +907,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .feature-visual.purple { background: var(--purple); color: var(--cream); display: flex; align-items: center; justify-content: center; }
 .feature-visual.blue { background: var(--blue); }
 .feature-visual.chartreuse { background: var(--chartreuse); }
-
-/* ---------- Race cards ---------- */
-.race-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
-}
-.race-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 30px;
-  position: relative;
-  overflow: hidden;
-}
-.race-card .date {
-  font-family: var(--script);
-  color: var(--blue);
-  font-size: 1.6rem;
-  margin-bottom: 6px;
-}
-.race-card h3 { margin-bottom: 16px; }
-.race-card .dist {
-  display: inline-block;
-  background: var(--chartreuse);
-  padding: 4px 12px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--purple);
-  margin-bottom: 18px;
-}
-.race-card.future {
-  background: var(--purple);
-  color: var(--cream);
-}
-.race-card.future h3 { color: var(--chartreuse); }
-.race-card.future .date { color: var(--chartreuse); }
 
 /* ---------- Race map layout ---------- */
 .race-map-section {
@@ -1221,18 +1136,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 
 /* ---------- Sponsors ---------- */
-.sponsor-card {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  padding: 50px 0;
-  border-bottom: 1px solid var(--line);
-  align-items: start;
-}
-.sponsor-card:last-of-type { border-bottom: 0; }
-@media (max-width: 760px) {
-  .sponsor-card { grid-template-columns: 1fr; gap: 22px; }
-}
 .partner-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1272,20 +1175,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   align-self: flex-start;
   margin-top: auto;           /* belt-and-braces */
 }
-.sponsor-name {
-  font-family: var(--serif);
-  font-size: 2.4rem;
-  color: var(--purple);
-  line-height: 1;
-}
-.sponsor-meta {
-  font-size: 0.85rem;
-  color: var(--ink-soft);
-  margin-top: 8px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 /* ---------- Footer ---------- */
 .footer {
   background: var(--purple);
@@ -1295,38 +1184,11 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .footer h3 { color: var(--cream); font-size: 1.8rem; margin-bottom: 14px; }
 .footer p { color: rgba(250, 246, 238, 0.75); }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
-  gap: 50px;
-  margin-bottom: 50px;
-}
-@media (max-width: 760px) {
-  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-}
 .footer a { color: var(--cream); border-color: rgba(250, 246, 238, 0.3); }
 .footer a:hover { color: var(--chartreuse); border-bottom-color: var(--chartreuse); }
 .footer h4 { color: rgba(250, 246, 238, 0.6); margin-bottom: 14px; }
 .footer ul { list-style: none; }
 .footer li { margin-bottom: 8px; }
-.footer-bottom {
-  border-top: 1px solid rgba(250, 246, 238, 0.15);
-  padding-top: 24px;
-  font-size: 0.82rem;
-  color: rgba(250, 246, 238, 0.55);
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* ---------- Doodle accents ---------- */
-.doodle {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.9;
-}
-
 /* ---------- Newsletter ---------- */
 .newsletter {
   background: var(--chartreuse);
@@ -1362,14 +1224,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 .newsletter-blue h2 { margin-bottom: 14px; }
 .newsletter-blue p { margin: 0 auto 28px; }
-.newsletter-form {
-  display: flex;
-  gap: 8px;
-  max-width: 460px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 .newsletter input {
   flex: 1;
   min-width: 220px;
@@ -1382,43 +1236,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   color: var(--purple);
 }
 .newsletter input:focus { outline: 2px solid var(--purple); outline-offset: 1px; }
-
-/* ---------- Mission statement (home) ---------- */
-.mission-home {
-  background: var(--purple);
-  color: var(--cream);
-  padding: clamp(48px, 7vw, 80px) 0;
-  text-align: center;
-  border-top: 1px solid var(--line);
-}
-.mission-home h2 {
-  color: var(--chartreuse);
-  margin-bottom: 20px;
-}
-.mission-home p {
-  color: rgba(250, 246, 238, 0.85);
-  font-size: 1.08rem;
-  line-height: 1.7;
-  max-width: 60ch;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ---------- Race dates strip (home) ---------- */
-.race-dates-strip {
-  background: var(--cream-deep);
-  padding: clamp(36px, 5vw, 56px) 0;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.race-dates-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-@media (max-width: 640px) {
-  .race-dates-grid { grid-template-columns: 1fr; }
-}
 
 /* ---------- Boat feature inline ---------- */
 .boat-specs-feature {
@@ -1610,7 +1427,21 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
     font-size: 0.5rem !important;
   }
 
-  /* --- Proof bar compact --- */
-  .proof-grid { gap: 10px; }
-  .proof-num { font-size: clamp(1.4rem, 5vw, 1.8rem); }
+  /* --- Footer: stack links and increase tap targets --- */
+  .footer > .wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .footer > .wrap > nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px 16px !important;
+  }
+  .footer > .wrap > nav a {
+    display: inline-block;
+    padding: 10px 0;
+    min-height: 44px;
+    line-height: 24px;
+  }
 }
