@@ -462,6 +462,8 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .hero-cover-content .hero-ctas .btn { font-size: 0.8rem; padding: 10px 20px; }
 @media (max-width: 860px) {
   .hero-cover-content { max-width: 100%; }
+  .hero-cover-content .hero-ctas { flex-wrap: wrap; }
+  .hero-cover-content .hero-ctas .btn { font-size: 0.72rem; padding: 7px 14px; flex: 0 0 auto; }
 }
 
 
@@ -717,7 +719,6 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .logos {
   background: linear-gradient(135deg, var(--purple) 0%, var(--blue) 50%, var(--purple) 100%);
   padding: 14px 0;
-  border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .logos-inner {
