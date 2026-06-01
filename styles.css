@@ -467,6 +467,10 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 
 
+/* ---------- Gallery lightbox thumbnails ---------- */
+.gallery-thumb { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.gallery-thumb:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
 /* ---------- Reels + title card grid (home page library) ---------- */
 .reels-with-title {
   display: grid;
@@ -1209,7 +1213,11 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(30px, 5vw, 60px);
-  align-items: start;
+  align-items: stretch;
+}
+.boat-specs-feature > div:last-child img {
+  height: 100%;
+  object-fit: cover;
 }
 .boat-specs-feature .specs {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1220,6 +1228,188 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 }
 @media (max-width: 640px) {
   .boat-specs-feature .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- Expandable race cards ---------- */
+.race-card-toggle {
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.race-card-toggle:hover {
+  border-color: var(--blue);
+  box-shadow: 0 4px 16px rgba(40, 4, 65, 0.1);
+}
+.race-card-toggle .expand-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-top: 8px;
+  transition: color 0.2s ease;
+}
+.race-card-toggle .expand-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+.race-card-toggle.expanded .expand-arrow {
+  transform: rotate(180deg);
+}
+.race-card-detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.race-card-detail.open {
+  opacity: 1;
+}
+.race-card-detail-inner {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+}
+.landmark-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+.landmark-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.landmark-list li:last-child { border-bottom: none; }
+.landmark-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--cream-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+}
+
+/* ---------- Partner cards colored ---------- */
+.partner-card-eh .partner-logo {
+  background: linear-gradient(135deg, #f5f0ff 0%, #ede5fb 100%);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.partner-card-aws .partner-logo {
+  background: linear-gradient(135deg, #fff4e6 0%, #fff0db 100%);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+.partner-card-mantel .partner-logo {
+  background: linear-gradient(135deg, #e8f7f0 0%, #dff2e8 100%);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+/* ---------- Race CV section ---------- */
+.race-cv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+@media (max-width: 640px) {
+  .race-cv-grid { grid-template-columns: 1fr; }
+}
+.race-cv-card {
+  background: rgba(250, 246, 238, 0.08);
+  border: 1px solid rgba(230, 242, 83, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.race-cv-card:hover {
+  border-color: rgba(230, 242, 83, 0.5);
+  transform: translateY(-2px);
+}
+.race-cv-badge {
+  background: var(--chartreuse);
+  color: var(--purple);
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.race-cv-card h3 {
+  font-size: 0.88rem;
+  margin-bottom: 2px;
+  color: var(--cream);
+}
+.race-cv-card p {
+  font-size: 0.78rem;
+  color: rgba(250, 246, 238, 0.6);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- Boat deep dive ---------- */
+.deep-dive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.deep-dive-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.deep-dive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(40, 4, 65, 0.08);
+}
+.deep-dive-card .card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  display: block;
+}
+.deep-dive-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.deep-dive-card p {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+.deep-dive-card .spec-highlight {
+  display: inline-block;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--purple);
+  margin-top: 12px;
+  margin-right: 6px;
 }
 
 /* ---------- Accessibility ---------- */

@@ -45,7 +45,7 @@
             <li><a href="learn/inshore-offshore.html">Inshore vs. Offshore</a></li>
           </ul>
         </li>
-        <li><a href="boat.html">Boat</a></li>
+        <li><a href="boat.html">The Boat</a></li>
         <li><a href="races.html" class="active">Racing</a></li>
         <li><a href="sponsors.html">Partners</a></li>
         <li><a href="about.html">About Annie</a></li>
@@ -107,19 +107,35 @@
 
     <!-- RIGHT: Race detail cards -->
     <div class="race-map-cards">
-      <article class="race-map-card">
+      <article class="race-map-card race-card-toggle" onclick="toggleRaceCard(this)">
         <span class="eyebrow">Race 1 · 25 July 2026</span>
         <h2 class="mt-sm" style="font-size: 1.4rem;">Sydney to Gold Coast</h2>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 12px;">
           <span style="background:var(--chartreuse); color:var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">384 nm</span>
-          <span style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~2–3 days</span>
+          <span style="background:transparent; color:var(--purple); border:1px solid var(--purple); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">~2-3 days</span>
           <span style="background:transparent; color:var(--ink-soft); border:1px solid var(--line); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Double-handed</span>
         </div>
         <p style="margin-bottom:8px;">Sydney Harbour to Queensland, up the NSW coast. The East Australian Current - three knots of southerly flow - is always the strategic puzzle. Our first extended offshore of the season.</p>
-        <p><a href="https://goldcoast.cycaracing.com" target="_blank" rel="noopener noreferrer">goldcoast.cycaracing.com &rarr;</a></p>
+        <span class="expand-hint">Landmarks &amp; details <span class="expand-arrow">&#9662;</span></span>
+
+        <div class="race-card-detail">
+          <div class="race-card-detail-inner">
+            <p style="font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 12px;"><strong>The route:</strong> Out through Sydney Heads, north past the Central Coast, Newcastle, and up through the NSW coastline. The key tactical decision is how far offshore to push to find the East Australian Current.</p>
+            <h4 style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px;">Landmarks along the way</h4>
+            <ul class="landmark-list">
+              <li><span class="landmark-icon">🏛️</span><div><strong>Sydney Heads</strong><br>The iconic harbour entrance. Start line off the CYCA in Rushcutters Bay, then a beat or reach out through the Heads depending on the breeze.</div></li>
+              <li><span class="landmark-icon">🏖️</span><div><strong>Broken Bay & the Central Coast</strong><br>First major headland north. Lion Island marks the entrance to the Hawkesbury. The sea breeze effect here can create local wind shifts.</div></li>
+              <li><span class="landmark-icon">⚓</span><div><strong>Newcastle & Port Stephens</strong><br>Industrial coastline gives way to beautiful bays. The continental shelf starts to narrow here - important for current strategy.</div></li>
+              <li><span class="landmark-icon">🐋</span><div><strong>Coffs Harbour & Solitary Islands</strong><br>Whale territory in July. The Solitary Islands Marine Park marks where tropical and temperate waters meet. Currents can be unpredictable.</div></li>
+              <li><span class="landmark-icon">🌊</span><div><strong>Byron Bay & Cape Byron</strong><br>Australia's most easterly point. The lighthouse is a welcome sight - it means Queensland is close. Often a wind transition zone.</div></li>
+              <li><span class="landmark-icon">🏁</span><div><strong>Gold Coast - The Seaway</strong><br>Finish line. The Seaway entrance can be tricky in a big swell. After 384 nm, the Southport Yacht Club is a very welcome sight.</div></li>
+            </ul>
+            <p style="margin-top: 12px;"><a href="https://goldcoast.cycaracing.com" target="_blank" rel="noopener noreferrer">goldcoast.cycaracing.com &rarr;</a></p>
+          </div>
+        </div>
       </article>
 
-      <article class="race-map-card">
+      <article class="race-map-card race-card-toggle" onclick="toggleRaceCard(this)">
         <span class="eyebrow">Race 2 · 31 July 2026</span>
         <h2 class="mt-sm" style="font-size: 1.4rem;">Gold Coast to Mackay</h2>
         <div style="display:flex; gap:8px; flex-wrap:wrap; margin: 10px 0 12px;">
@@ -128,7 +144,23 @@
           <span style="background:transparent; color:var(--ink-soft); border:1px solid var(--line); padding:3px 10px; border-radius:999px; font-size:0.68rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;">Double-handed</span>
         </div>
         <p style="margin-bottom:8px;">Further north - past Fraser Island and into tropical Queensland. Promises some glamour downwind sailing, and a chance to see what the little boat can really do.</p>
-        <p><a href="https://goldcoastmackay.com" target="_blank" rel="noopener noreferrer">goldcoastmackay.com &rarr;</a></p>
+        <span class="expand-hint">Landmarks &amp; details <span class="expand-arrow">&#9662;</span></span>
+
+        <div class="race-card-detail">
+          <div class="race-card-detail-inner">
+            <p style="font-size: 0.82rem; color: var(--ink-soft); margin-bottom: 12px;"><strong>The route:</strong> North from Southport along the Queensland coast, past Moreton Bay, through the Wide Bay passage near Fraser Island, and up into the tropics. The breeze should be southeasterly - classic trade wind sailing.</p>
+            <h4 style="font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 8px;">Landmarks along the way</h4>
+            <ul class="landmark-list">
+              <li><span class="landmark-icon">🌅</span><div><strong>Moreton Bay & Stradbroke Island</strong><br>The fleet exits past North Stradbroke Island. Moreton Bay's shallow waters create wind acceleration zones. Dolphins are guaranteed.</div></li>
+              <li><span class="landmark-icon">🏝️</span><div><strong>Fraser Island (K'gari)</strong><br>The world's largest sand island. The Wide Bay Bar at the southern end is a critical waypoint - currents here run hard and the seas can stack up.</div></li>
+              <li><span class="landmark-icon">🐢</span><div><strong>Bundaberg & the Burnett River</strong><br>Turtle nesting territory. The coastline flattens out here and the water starts to turn that tropical turquoise. Trade winds settle in.</div></li>
+              <li><span class="landmark-icon">🪸</span><div><strong>Lady Elliot Island</strong><br>The southernmost coral cay of the Great Barrier Reef. Marks the transition into reef waters - navigation becomes more careful from here.</div></li>
+              <li><span class="landmark-icon">⛵</span><div><strong>Yeppoon & the Keppel Islands</strong><br>Tropical islands with white sand beaches. The fleet passes offshore but the view is spectacular. Often a good downwind run through here.</div></li>
+              <li><span class="landmark-icon">🏁</span><div><strong>Mackay Marina</strong><br>Finish. 520 nm from the Gold Coast. Mackay sits in the heart of sugar cane country with the Whitsundays just up the road. A proper celebration awaits.</div></li>
+            </ul>
+            <p style="margin-top: 12px;"><a href="https://goldcoastmackay.com" target="_blank" rel="noopener noreferrer">goldcoastmackay.com &rarr;</a></p>
+          </div>
+        </div>
       </article>
 
       <div style="border: 2px dashed var(--line); border-radius: var(--radius-lg); padding: 32px 28px; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; min-height: 160px;">
@@ -141,34 +173,60 @@
   </div>
 </section>
 
-<!-- =================================================== CAMPAIGN ROADMAP -->
-<section style="background: var(--cream-deep); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
-  <div class="wrap-narrow">
-    <div style="text-align: center; margin-bottom: 32px;">
-      <span class="eyebrow">The bigger picture</span>
-      <h2 class="mt-sm">Where this is <span class="italic" style="color: var(--blue);">going.</span></h2>
+<!-- =================================================== TRACK RECORD -->
+<section style="background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom: 36px;">
+      <div>
+        <span class="eyebrow">Track record</span>
+        <h2 class="mt-sm">Results on the <span class="italic" style="color: var(--blue);">water.</span></h2>
+      </div>
+      <p class="tagline">A snapshot of the racing results - from inshore regattas to offshore campaigns.</p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 28px;">
 
-      <div style="border-left: 3px solid var(--chartreuse); padding: 16px 20px; background: var(--cream); border-radius: 0 var(--radius-lg) var(--radius-lg) 0;">
-        <span style="font-family: var(--script); font-size: 1.6rem; color: var(--purple); display: block; margin-bottom: 4px;">2026</span>
-        <p style="font-size: 0.84rem; margin: 0; color: var(--ink-soft);">East coast offshore. Building strong foundations and learning the boat.</p>
+      <!-- 5,000+ nm -->
+      <div style="background: var(--cream-deep); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; gap: 16px;">
+        <div style="background: var(--purple); color: var(--chartreuse); font-family: var(--serif); font-weight: 600; font-size: 1rem; min-width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;">10k+</div>
+        <div>
+          <h3 style="font-size: 0.88rem; margin-bottom: 4px;">Offshore nautical miles</h4>
+          <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0;">Across 7 vessel classes</p>
+        </div>
       </div>
 
-      <div style="border-left: 3px solid var(--blue); padding: 16px 20px; background: var(--cream); border-radius: 0 var(--radius-lg) var(--radius-lg) 0;">
-        <span style="font-family: var(--script); font-size: 1.6rem; color: var(--purple); display: block; margin-bottom: 4px;">2027</span>
-        <p style="font-size: 0.84rem; margin: 0; color: var(--ink-soft);">More miles, more races. Growing the programme and the platform.</p>
+      <!-- NSW Championships -->
+      <div style="background: var(--cream-deep); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; gap: 16px;">
+        <div style="background: var(--purple); color: var(--chartreuse); font-family: var(--serif); font-weight: 600; font-size: 1.3rem; min-width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;">1st</div>
+        <div>
+          <h3 style="font-size: 0.88rem; margin-bottom: 4px;">NSW IRC &amp; ORC Championships</h4>
+          <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0;">2025 · Farr 40 &amp; DK46</p>
+        </div>
       </div>
 
-      <div style="border-left: 3px solid var(--purple); padding: 16px 20px; background: var(--cream); border-radius: 0 var(--radius-lg) var(--radius-lg) 0;">
-        <span style="font-family: var(--script); font-size: 1.6rem; color: var(--purple); display: block; margin-bottom: 4px;">2028</span>
-        <p style="font-size: 0.84rem; margin: 0; color: var(--ink-soft);">Bigger ambitions. The long-range plan is to take The campaign global.</p>
+      <!-- Sydney to Gold Coast -->
+      <div style="background: var(--cream-deep); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; gap: 16px;">
+        <div style="background: var(--blue); color: var(--cream); font-family: var(--serif); font-weight: 600; font-size: 1.3rem; min-width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center;">2nd</div>
+        <div>
+          <h3 style="font-size: 0.88rem; margin-bottom: 4px;">Sydney to Gold Coast · IRC Div 1</h4>
+          <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0;">2025 · Class 40</p>
+        </div>
+      </div>
+
+      <!-- Sydney Hobart -->
+      <div style="background: var(--cream-deep); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 24px; display: flex; align-items: flex-start; gap: 16px;">
+        <div style="background: var(--blue); color: var(--cream); font-family: var(--serif); font-weight: 600; font-size: 0.65rem; min-width: 48px; height: 48px; border-radius: var(--radius); display: flex; align-items: center; justify-content: center; text-transform: uppercase; letter-spacing: 0.05em;">CYCA</div>
+        <div>
+          <h3 style="font-size: 0.88rem; margin-bottom: 4px;">Sydney Hobart & BWPS</h4>
+          <p style="font-size: 0.82rem; color: var(--ink-soft); margin: 0;">2025 · Only all female crew</p>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
+
+
 
 <!-- =================================================== RACE RECAPS PLACEHOLDER -->
 <section style="background: var(--purple); color: var(--cream); border-top:1px solid var(--line);">
@@ -199,7 +257,7 @@
     <span style="font-size:0.82rem; color:rgba(250,246,238,0.55);">© 2026 Annie Stevenson</span>
     <nav style="display:flex; gap:18px; font-size:0.82rem;">
       <a href="index.html">Learn</a>
-      <a href="boat.html">Boat</a>
+      <a href="boat.html">The Boat</a>
       <a href="sponsors.html">Partners</a>
       <a href="about.html">About</a>
       <a href="policies.html">Policies</a>
@@ -219,6 +277,21 @@
   var dd=document.querySelector('.has-dropdown');
   if(dd&&window.innerWidth<=720){dd.querySelector('a').addEventListener('click',function(e){if(!dd.classList.contains('dropdown-open')){e.preventDefault();dd.classList.toggle('dropdown-open')}});}
 })();
+</script>
+<script>
+function toggleRaceCard(card){
+  var detail=card.querySelector('.race-card-detail');
+  var isOpen=detail.classList.contains('open');
+  if(isOpen){
+    detail.style.maxHeight='0px';
+    detail.classList.remove('open');
+    card.classList.remove('expanded');
+  } else {
+    detail.style.maxHeight=detail.scrollHeight+'px';
+    detail.classList.add('open');
+    card.classList.add('expanded');
+  }
+}
 </script>
 <script src="protect.js" defer></script>
 
