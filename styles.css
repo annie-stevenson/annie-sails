@@ -910,6 +910,38 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   left: 12%;
   max-width: 280px;
 }
+.race-map-tag {
+  position: absolute;
+  bottom: 2%;
+  left: 3%;
+  max-width: 220px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  box-shadow: 0 4px 16px rgba(40, 4, 65, 0.06);
+}
+.race-map-tag h3 {
+  font-size: 0.98rem;
+  margin: 3px 0 8px;
+  line-height: 1.2;
+}
+.race-map-tag-results {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.race-map-tag .result-pill {
+  background: var(--chartreuse);
+  color: var(--purple);
+  padding: 2px 9px;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .race-map-cards {
   display: flex;
   flex-direction: column;
@@ -1369,34 +1401,56 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 /* ---------- Boat deep dive ---------- */
 .deep-dive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 .deep-dive-card {
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
-  padding: 28px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .deep-dive-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(40, 4, 65, 0.08);
+  border-color: var(--blue);
 }
 .deep-dive-card .card-icon {
-  font-size: 1.6rem;
-  margin-bottom: 12px;
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: var(--cream-deep);
+  color: var(--blue);
+}
+.deep-dive-card .card-icon svg {
+  width: 20px;
+  height: 20px;
 }
 .deep-dive-card h3 {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin: 0;
 }
 .deep-dive-card p {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--ink-soft);
   line-height: 1.6;
   margin: 0;
+}
+@media (max-width: 900px) {
+  .deep-dive-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .deep-dive-grid { grid-template-columns: 1fr; }
 }
 .deep-dive-card .spec-highlight {
   display: inline-block;
