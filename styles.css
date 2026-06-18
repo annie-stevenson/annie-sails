@@ -94,10 +94,13 @@ h1, h2, h3, h4 {
   line-height: 1.05;
 }
 
-h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 300; }
+h1 { font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 400; }
 h2 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 400; }
 h3 { font-size: clamp(1.3rem, 2.2vw, 1.7rem); font-weight: 500; }
 h4 { font-size: 1.1rem; font-weight: 600; font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-soft); }
+
+/* Larger h3 only on the homepage */
+.home h3 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 500; }
 
 p { margin-bottom: 1.1em; max-width: 68ch; }
 em, .italic { font-style: italic; font-family: var(--serif); }
@@ -368,11 +371,9 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
   transition: transform 0.15s ease, background 0.2s ease;
 }
 .btn:hover {
-  transform: translateY(-1px);
   background: var(--ink);
   border-color: var(--ink);
-  border-bottom-color: var(--chartreuse);
-  box-shadow: 0 4px 0 -1px var(--chartreuse);
+  border-bottom-width: 1px;
 }
 
 .btn.secondary {
@@ -390,6 +391,22 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 
 .btn .arrow { transition: transform 0.2s ease; }
 .btn:hover .arrow { transform: translateX(3px); }
+
+/* ---------- Instagram links: logo + clickable everywhere ---------- */
+/* Applies to any text/button Instagram link; skips reel image-cards
+   (those use inline `display: block`) and the nav. */
+a[href*="instagram.com"]:not([style*="display: block"])::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.45em;
+  vertical-align: -0.16em;
+  background-color: currentColor;
+  -webkit-mask: url("instagram.svg") center / contain no-repeat;
+  mask: url("instagram.svg") center / contain no-repeat;
+  flex-shrink: 0;
+}
 
 /* ---------- Hero ---------- */
 .hero {
@@ -878,6 +895,382 @@ section { padding: clamp(44px, 6vw, 80px) 0; }
 .feature-visual.purple { background: var(--purple); color: var(--cream); display: flex; align-items: center; justify-content: center; }
 .feature-visual.blue { background: var(--blue); }
 .feature-visual.chartreuse { background: var(--chartreuse); }
+
+/* ---------- Home hub (overview homepage) ---------- */
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: clamp(52px, 8vw, 104px) 0 clamp(28px, 4vw, 52px);
+}
+.home-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 4, 65, 0.72) 0%,
+    rgba(40, 4, 65, 0.62) 55%,
+    rgba(40, 4, 65, 0.78) 100%
+  );
+}
+.home-hero .wrap { position: relative; z-index: 2; }
+.home-hero .eyebrow { margin-bottom: 6px; color: var(--chartreuse); }
+.home-hero h1 {
+  max-width: 18ch;
+  margin: 14px auto 0;
+  color: var(--cream);
+}
+.home-hero h1 .italic { color: var(--chartreuse); }
+.home-hero .home-sub {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+  line-height: 1.55;
+  color: rgba(250, 246, 238, 0.9);
+  max-width: 58ch;
+  margin: 24px auto 0;
+}
+.home-hero .home-sub em { color: var(--chartreuse); font-style: italic; }
+.home-hero .hero-ctas .btn.secondary {
+  color: var(--cream);
+  border-color: rgba(250, 246, 238, 0.45);
+}
+.home-hero .hero-ctas .btn.secondary:hover {
+  background: rgba(250, 246, 238, 0.12);
+}
+.home-hero .hero-ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+.home-hero .hero-ctas .btn {
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  max-width: 920px;
+  margin: 0 auto;
+}
+@media (max-width: 820px) { .hub-grid { grid-template-columns: 1fr; } }
+.hub-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 34px 28px;
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(40, 4, 65, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.hub-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(40, 4, 65, 0.1);
+  border-color: var(--blue);
+  border-bottom-width: 1px;
+}
+.hub-card .hub-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 15px;
+  background: var(--cream-deep);
+  color: var(--blue);
+  margin-bottom: 18px;
+}
+.hub-card .hub-icon svg { width: 26px; height: 26px; }
+.hub-card h3 { margin: 0 0 8px; color: var(--purple); }
+.hub-card p { color: var(--ink-soft); font-size: 0.92rem; line-height: 1.55; margin: 0 0 18px; flex: 1; }
+.hub-card .hub-arrow {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: var(--purple);
+}
+.hub-card:hover .hub-arrow { color: var(--blue); }
+
+/* ---------- Home page intro trio (3 side-by-side pillars) ---------- */
+/* Parent grid defines 5 shared rows; each pillar uses subgrid so that
+   eyebrows, titles, paragraphs, links and photos line up across all three. */
+.trio-text {
+  --trio-gap: clamp(40px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto 1fr auto auto;
+  column-gap: var(--trio-gap);
+  row-gap: 0;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.pillar {
+  position: relative;
+  display: grid;
+  grid-row: span 5;
+  grid-template-rows: subgrid;
+  align-content: start;
+}
+/* Thin vertical divider centered in the gap between columns */
+.pillar:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(var(--trio-gap) / -2);
+  width: 1px;
+  background: var(--line);
+}
+.pillar .eyebrow { margin-bottom: 0; }
+.pillar h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.1rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 6px 0 0;
+}
+.pillar h3 .italic { font-size: 1.02em; }
+.pillar h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--line);
+  margin: 14px 0 0;
+  opacity: 0.9;
+}
+.pillar p {
+  font-size: 0.96rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin: 16px 0 0;
+}
+.pillar a {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: var(--purple);
+  border: none;
+  margin: 18px 0 0;
+  align-self: start;
+}
+.pillar a:hover { color: var(--blue); }
+.pillar a .arrow { transition: transform 0.2s ease; display: inline-block; }
+.pillar a:hover .arrow { transform: translateX(3px); }
+
+/* Highlighted CTA — the one journey not already linked from the hero */
+.pillar a.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  justify-self: start;
+  background: var(--purple);
+  color: var(--cream);
+  border: 1.5px solid var(--purple);
+  border-radius: 999px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+}
+.pillar a.cta:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+/* Small photo anchored to the bottom of every pillar */
+.pillar img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-top: clamp(20px, 2vw, 28px);
+}
+
+/* ---------- Homepage credibility / proof strip ---------- */
+.stat-strip { border-bottom: 1px solid var(--line); }
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+.stat-item + .stat-item { border-left: 1px solid var(--line); }
+.stat-num {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1;
+  color: var(--purple);
+}
+.stat-num .accent { color: var(--blue); }
+.stat-label {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  max-width: 20ch;
+  line-height: 1.4;
+}
+@media (max-width: 720px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 30px 16px; }
+  .stat-item:nth-child(odd) { border-left: none; }
+}
+
+/* Stack into one column on narrow screens */
+@media (max-width: 820px) {
+  .trio-text {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 40px;
+  }
+  .pillar {
+    grid-row: auto;
+    grid-template-rows: none;
+  }
+  /* Divider runs horizontally between stacked pillars on mobile */
+  .pillar:not(:last-child)::after {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: -20px;
+    width: auto;
+    height: 1px;
+  }
+  .pillar img { aspect-ratio: 16 / 10; }
+  .pillar h3 { font-size: clamp(1.4rem, 6vw, 1.8rem); }
+}
+
+/* ---------- Home page: tighter spacing + smaller type ---------- */
+.home section { padding: clamp(30px, 4vw, 52px) 0; }
+.home .logos { padding: 10px 0; }
+.home .newsletter-blue { padding: 34px 0; }
+
+.home .home-hero { padding: clamp(34px, 5vw, 60px) 0 clamp(18px, 3vw, 32px); }
+.home .home-hero h1 { font-size: clamp(2rem, 4.2vw, 3.2rem); font-weight: 300; }
+.home .home-hero .home-sub { font-size: clamp(0.98rem, 1.3vw, 1.12rem); margin-top: 18px; }
+.home .home-hero .hero-ctas { margin-top: 26px; }
+.home .home-hero .hero-ctas .btn { padding: 13px 26px; font-size: 0.9rem; }
+
+/* Smaller Explore / Site Map section */
+section[style*="background: var(--cream-deep)"] {
+  padding: clamp(24px, 3vw, 36px) 0;
+}
+section[style*="background: var(--cream-deep)"] .section-head {
+  margin-bottom: 14px;
+}
+section[style*="background: var(--cream-deep)"] .section-head .eyebrow {
+  font-size: 0.72rem;
+}
+section[style*="background: var(--cream-deep)"] .hub-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  max-width: 560px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card {
+  padding: 18px 16px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card .hub-icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 10px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card .hub-icon svg {
+  width: 18px;
+  height: 18px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card h3 {
+  font-size: 0.98rem;
+  margin-bottom: 6px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card p {
+  font-size: 0.82rem;
+  margin-bottom: 10px;
+}
+section[style*="background: var(--cream-deep)"] .hub-card .hub-arrow {
+  font-size: 0.8rem;
+}
+@media (max-width: 560px) {
+  section[style*="background: var(--cream-deep)"] .hub-grid {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
+}
+
+.home h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.home h3 { font-size: clamp(1.05rem, 1.8vw, 1.25rem); }
+.home .mt-sm { margin-top: 12px; }
+.home .mt-md { margin-top: 16px; }
+
+.home .feature { gap: clamp(26px, 4vw, 52px); }
+.home .feature p { font-size: 0.95rem; }
+.home .newsletter-blue p { font-size: 0.9rem; }
+
+.home .hub-card { padding: 26px 22px; }
+.home .hub-card .hub-icon { width: 46px; height: 46px; margin-bottom: 14px; }
+.home .hub-card .hub-icon svg { width: 22px; height: 22px; }
+.home .hub-card p { font-size: 0.88rem; }
+
+.hub-section {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+.hub-section .section-head {
+  margin-bottom: 8px;
+}
+.hub-section .hub-grid {
+  max-width: 680px;
+  gap: 16px;
+}
+.hub-section .hub-card {
+  padding: 24px 18px;
+}
+.hub-section .hub-card .hub-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 12px;
+}
+.hub-section .hub-card .hub-icon svg {
+  width: 20px;
+  height: 20px;
+}
+.hub-section .hub-card h3 {
+  font-size: 1rem;
+}
+.hub-section .hub-card p {
+  font-size: 0.86rem;
+  margin-bottom: 12px;
+}
 
 /* ---------- Race map layout ---------- */
 .race-map-section {
